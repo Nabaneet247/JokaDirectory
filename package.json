@@ -1,0 +1,27 @@
+{
+  "name": "joka-directory",
+  "version": "1.0.0",
+  "description": "Joka Directory",
+  "main": "server.js",
+  "scripts": {
+    "pm2start": "pm2 start ecosystem.config.js",
+    "pm2check": "pm2 status joka-directory",
+    "pm2logs": "pm2 logs joka-directory --lines 200",
+    "pm2stop": "pm2 delete joka-directory",
+    "pm2restart": "pm2 reload joka-directory"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nabaneet247/JokaDirectory.git"
+  },
+  "author": "Nabaneet Roy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nabaneet247/JokaDirectory/issues"
+  },
+  "homepage": "https://github.com/Nabaneet247/JokaDirectory#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "path": "^0.12.7"
+  }
+}

@@ -1,0 +1,19 @@
+module.exports = {
+    apps: [{
+        name: "joka-directory",
+        script: "./server.js",
+        exp_backoff_restart_delay: 100,
+        instances: 2,
+        merge_logs: true,
+        exec_mode: "cluster",
+        /* All env values are read as string by node */
+        env: {
+            PORT: '5000'
+        },
+        watch: true,
+        log_date_format: "YYYY-MM-DD HH:mm:ss Z",
+        time: true,
+        ignore_watch: ['logs', 'ecosystem.config.js', 'package.json'],
+        log_file: "./logs/joka-directory-logs.txt"
+    }]
+}
