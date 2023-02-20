@@ -5,10 +5,13 @@ export default class BackendService {
     this.$http = $http;
   }
 
-  async testMethod() {
+  async makeSearchRequest(searchValue, searchType) {
     // console.log(this.$rootScope);
     try {
-      var res = await this.$http.get("https://reqres.in/api/users/2");
+      var res = await this.$http.get(
+        "http://ec2-43-204-240-96.ap-south-1.compute.amazonaws.com/api/jd/users",
+        { params: { searchValue, searchType } }
+      );
       return res.data;
     } catch (err) {
       console.error(err);

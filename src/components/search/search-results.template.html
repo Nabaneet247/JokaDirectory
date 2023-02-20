@@ -1,3 +1,6 @@
-<p>results</p>
-<p>{{$ctrl.searchResults}}</p>
-<button ng-click="$ctrl.changethis()">Change</button>
+<div ng-show="$ctrl.searchResults.length > 0">
+  <p>Search Results</p>
+  <div ng-repeat="userData in $ctrl.searchResults">
+    <user-card user="userData"></user-card>
+  </div>
+</div>
