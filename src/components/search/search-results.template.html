@@ -1,6 +1,10 @@
-<div ng-show="$ctrl.searchResults.length > 0">
-  <p>Search Results</p>
-  <div ng-repeat="userData in $ctrl.searchResults">
-    <user-card user="userData"></user-card>
+<div ng-if="$ctrl.searchResults.length > 0">
+  <h3>Search Results</h3>
+  <div class="jd-search-results-container d-flex flex-wrap">
+    <div ng-repeat="userData in $ctrl.searchResults" class="col-12 col-sm-6">
+      <div class="card m-2 search-result-box">
+        <user-card user="userData" search-type="$ctrl.searchType"></user-card>
+      </div>
+    </div>
   </div>
 </div>

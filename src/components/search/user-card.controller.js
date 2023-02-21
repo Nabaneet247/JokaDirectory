@@ -1,10 +1,12 @@
 export default class UserCardController {
-  constructor($rootScope, $scope) {
-    this.$rootScope = $rootScope;
+  constructor($scope, constants) {
     this.$scope = $scope;
+    this.constants = constants;
   }
 
-  $onInit() {}
+  $onInit() {
+    
+  }
 
   $onChanges(changes) {}
 }

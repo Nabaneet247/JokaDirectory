@@ -12,10 +12,8 @@ export default class InterceptorService {
 
   response(res) {
     if (!res.config.url.includes("/api/jd")) return res;
-    window.localStorage.setItem(
-      "joka_auth_token",
-      res.config.headers["joka_auth_token"]
-    );
+    // console.log(res.config);
+    window.localStorage.setItem("joka_auth_token", res.config.headers["joka_auth_token"]);
     return res;
   }
 }

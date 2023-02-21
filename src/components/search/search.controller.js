@@ -10,6 +10,7 @@ export default class SearchController {
     // console.log(window.localStorage);
     this.results = [];
     this.token = window.localStorage.getItem("joka_auth_token");
+    console.log(this);
   }
 
   $onChanges(changes) {
@@ -21,11 +22,16 @@ export default class SearchController {
   }
 
   async search() {
-    if (this.searchValue.length < 4) return;
+    if (!this.isSearchValueValid()) return;
+    
     this.results = await this.backendService.makeSearchRequest(
       this.searchValue,
       this.searchType
     );
     this.$scope.$apply();
+  }
+
+  isSearchValueValid() {
+    return (this.searchValue.length > 3);
   }
 }
