@@ -11,9 +11,11 @@ export default class InterceptorService {
   }
 
   response(res) {
+    // console.log(res.config.url.includes("/api/jd"));
     if (!res.config.url.includes("/api/jd")) return res;
-    // console.log(res.config);
-    window.localStorage.setItem("joka_auth_token", res.config.headers["joka_auth_token"]);
+    // console.log(5);
+    window.localStorage.setItem("joka_auth_token", res.config.headers["joka_auth_token"] );
+    // console.log(res.config.headers["joka_auth_token"]);
     return res;
   }
 }

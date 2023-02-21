@@ -1,9 +1,17 @@
 <div ng-if="$ctrl.searchResults.length > 0">
-  <h3>Search Results</h3>
-  <div class="jd-search-results-container d-flex flex-wrap">
-    <div ng-repeat="userData in $ctrl.searchResults" class="col-12 col-sm-6">
-      <div class="card m-2 search-result-box">
-        <user-card user="userData" search-type="$ctrl.searchType"></user-card>
+  <div class="">
+    <button ng-repeat="userGroup in $ctrl.userGroups" class="mx-2" ng-click="$ctrl.showUserGroup(userGroup.id)">{{userGroup.label}} - {{userGroup.users.length}}</button>
+  </div>
+
+  <div ng-repeat="userGroup in $ctrl.userGroups">
+    <!-- <p>{{userGroup}}</p> -->
+    <div
+      ng-if="userGroup.displaying"
+      class="jd-search-results-container d-flex flex-wrap align-items-stretch jd-scrollbar">
+      <div ng-repeat="userData in userGroup.users" class="col-12 col-sm-6 p-2">
+        <div class="card h-100 search-result-box">
+          <user-card user="userData" search-type="$ctrl.searchType"></user-card>
+        </div>
       </div>
     </div>
   </div>

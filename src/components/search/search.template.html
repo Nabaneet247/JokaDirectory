@@ -1,10 +1,23 @@
-<div class="">
+<div class="mb-4">
   <input type="text" ng-model="$ctrl.token" />
   <button ng-click="$ctrl.saveToken()">Save</button>
 </div>
 
-<div>
-  <input type="text" ng-model="$ctrl.searchValue" ng-keyup="$ctrl.search()" />
-  <button ng-click="$ctrl.search()">Search</button>
-  <search-results search-results="$ctrl.results" search-type="$ctrl.searchType"></search-results>
+<div class="d-flex justify-content-center mb-5 p-1">
+  <div class="col-3">
+    <select
+      class="btn jd-select"
+      ng-options="item as item.Label for item in $ctrl.searchTypes track by item['Request param']"
+      ng-model="$ctrl.searchType"></select>
+  </div>
+  <div class="col-sm-4 col-6">
+    <input type="text" class="jd-search-bar form-control" ng-model="$ctrl.searchValue" ng-keyup="$ctrl.search()" placeholder="Search..."/>
+  </div>
+  <div class="col-1">
+    <button class="btn btn-light jd-search-btn" ng-click="$ctrl.search()">Search</button>
+  </div>
 </div>
+<search-results
+  search-results="$ctrl.results"
+  search-type="$ctrl.searchType"
+  ng-show="$ctrl.isSearchValueValid()"></search-results>

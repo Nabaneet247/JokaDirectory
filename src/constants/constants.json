@@ -33,18 +33,19 @@
     "hobbies": { "Label": "Hobbies", "editable": true }
   },
   "Search Type Mappings": {
-    "displayName": { "Request param": "NAME" },
-    "regno": { "Request param": "REG_NO" },
-    "batch": { "Request param": "BATCH" },
-    "homecity": { "Request param": "HOME_CITY" },
-    "company": { "Request param": "COMPANY" },
-    "summersCompany": { "Request param": "SUMMERS_COMPANY" },
-    "finalsCompany": { "Request param": "FINALS_COMPANY" },
-    "officecity": { "Request param": "OFFICE_CITY" },
-    "ugDegree": { "Request param": "UG_DEGREE" },
-    "ugCollege": { "Request param": "UG_COLLEGE" },
-    "mobile": { "Request param": "MOBILE" },
-    "roomNumber": { "Request param": "ROOM_NO" },
-    "hostel": { "Request param": "HOSTEL" }
-  }
+    "displayName": { "Request param": "NAME", "Label": "Name" },
+    "regno": { "Request param": "REG_NO", "Label": "Reg No" },
+    "batch": { "Request param": "BATCH", "Label": "Batch" },
+    "homecity": { "Request param": "HOME_CITY", "Label": "Home City" },
+    "company": { "Request param": "COMPANY", "Label": "Company" },
+    "summersCompany": { "Request param": "SUMMERS_COMPANY", "Label": "Summers Company" },
+    "finalsCompany": { "Request param": "FINALS_COMPANY", "Label": "Finals Company" },
+    "officecity": { "Request param": "OFFICE_CITY", "Label": "Office City" },
+    "ugDegree": { "Request param": "UG_DEGREE", "Label": "UG Degree" },
+    "ugCollege": { "Request param": "UG_COLLEGE", "Label": "UG Institute" },
+    "mobile": { "Request param": "MOBILE", "Label": "Mobile No" },
+    "roomNumber": { "Request param": "ROOM_NO", "Label": "Room No" },
+    "hostel": { "Request param": "HOSTEL", "Label": "Hostel" }
+  },
+  "UI Groups" : ["PGP", "PGPEX"]
 }

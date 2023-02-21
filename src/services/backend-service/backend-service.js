@@ -10,6 +10,7 @@ export default class BackendService {
     try {
       var res = await this.$http.get(
         "http://ec2-43-204-240-96.ap-south-1.compute.amazonaws.com/api/jd/users",
+        // "http://localhost:3000/api/jd/users",
         { params: { searchValue, searchType } }
       );
       return res.data;
