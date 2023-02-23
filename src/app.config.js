@@ -33,6 +33,9 @@ app.config([
           },
         },
       }) */
+      .when("/", {
+        redirectTo: "/jd"
+      })
       .otherwise({
         redirectTo: "/jd",
       });
