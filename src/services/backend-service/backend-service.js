@@ -1,9 +1,9 @@
 export default class BackendService {
-  constructor($rootScope, $http) {
+  constructor($rootScope, $http, configData) {
     this.query = "";
     this.$rootScope = $rootScope;
     this.$http = $http;
-    this.apiUrl = "http://ec2-43-204-240-96.ap-south-1.compute.amazonaws.com/api";
+    this.apiUrl = configData.apiUrl;
     // this.apiUrl = "http://localhost:3000/api";
   }
 

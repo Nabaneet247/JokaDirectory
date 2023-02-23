@@ -1,4 +1,11 @@
+var env = {};
+if (window) {
+	Object.assign(env, window.__env);
+}
+
 var app = angular.module("jd");
+
+app.constant('configData', env);
 
 app.config([
   "$locationProvider",
