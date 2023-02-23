@@ -21,7 +21,7 @@
     <div
       ng-if="userGroup.displaying"
       class="jd-search-results-container d-flex flex-wrap align-items-stretch">
-      <div ng-repeat="userData in userGroup.users" class="col-12 col-sm-6 p-2">
+      <div ng-repeat="userData in userGroup.users" class="col-12 p-2">
         <div class="card h-100 search-result-box">
           <user-card user="userData" search-type="$ctrl.searchType"></user-card>
         </div>

@@ -1,6 +1,6 @@
   export default class InterceptorService {
     constructor(configData) {
-      this.logoutRedirectUrl = configData.logoutRedirectUrl;
+      this.loginPageRedirectUrl = configData.loginPageRedirectUrl;
     }
 
     request = (config) => {
@@ -21,7 +21,7 @@
 
     responseError = (error) => {
       if (error.status == 401) {
-        window.location.assign(this.logoutRedirectUrl);
+        window.open(`${this.loginPageRedirectUrl}${window.location.href}`, "_self");
       }
       return error;
     }
