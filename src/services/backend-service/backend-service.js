@@ -45,4 +45,15 @@ export default class BackendService {
       return {};
     }
   }
+
+  /* async logout() {
+    try {
+      let res = await this.$http.post(this.apiUrl + "/auth/logout", {});
+      return true;
+    } catch (err) {
+      console.error("Couldn't logout");
+      console.error(err);
+      return false;
+    }
+  } */
 }

@@ -1,5 +1,5 @@
 import InterceptorService from "./interceptor-service.js";
 
-var interceptorService = angular.module("interceptorService", []);
-interceptorService.service("interceptorService", InterceptorService);
-export default interceptorService;
+var interceptorServiceModule = angular.module("interceptorServiceModule", []);
+interceptorServiceModule.service("interceptorService", InterceptorService);
+export default interceptorServiceModule;

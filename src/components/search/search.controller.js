@@ -1,6 +1,5 @@
 export default class SearchController {
   constructor($scope, backendService, constants) {
-    this.searchValue = "";
     this.$scope = $scope;
     this.backendService = backendService;
     this.searchTypes = Object.values(constants["Search Type Mappings"]);
@@ -8,11 +7,9 @@ export default class SearchController {
   }
 
   $onInit() {
+    this.searchValue = "";
     this.results = [];
     this.token = window.localStorage.getItem("joka_auth_token");
-    // this.searchTypes.forEach((x) => {x.selected = false});
-    // this.searchTypes[0].selected = true;
-    // console.log(this.searchTypes)
   }
 
   saveToken() {
