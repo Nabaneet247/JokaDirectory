@@ -1,9 +1,10 @@
 export default class SearchController {
-  constructor($scope, backendService, constants) {
+  constructor($scope, backendService, constants, configData) {
     this.$scope = $scope;
     this.backendService = backendService;
     this.searchTypes = Object.values(constants["Search Type Mappings"]);
     this.searchType = this.searchTypes[0]["Request param"];
+    this.devMode = configData.devMode;
   }
 
   $onInit() {
