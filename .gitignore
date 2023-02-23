@@ -3,3 +3,4 @@ package-lock.json
 ecosystem.config.js
 logs/*
 src/env.js
+env.js
