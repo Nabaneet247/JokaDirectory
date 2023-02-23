@@ -8,6 +8,7 @@ const port = process.env.PORT || 5000;
 // app.get('/jokaDirectory', function (req, res) {
 //     res.sendFile(path.join(__dirname + '/app/app.html'));
 // });
+app.use('/jd/src', express.static(__dirname + '/src'));
 console.log(__dirname);
 app.use(express.static(__dirname));
 
