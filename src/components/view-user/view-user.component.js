@@ -4,7 +4,7 @@ var viewUser = angular.module("view-user", []);
 
 viewUser
   .component("viewUser", {
-    templateUrl: "src/components/view-user/view-user.template.html",
+    templateUrl: "/jd/src/components/view-user/view-user.template.html",
     controller: ViewUserController,
     bindings: {
       user: '<',
