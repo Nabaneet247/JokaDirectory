@@ -3,19 +3,46 @@ export default class BackendService {
     this.query = "";
     this.$rootScope = $rootScope;
     this.$http = $http;
+    this.apiUrl = "http://ec2-43-204-240-96.ap-south-1.compute.amazonaws.com/api";
+    // this.apiUrl = "http://localhost:3000/api";
   }
 
   async makeSearchRequest(searchValue, searchType) {
-    // console.log(this.$rootScope);
     try {
-      var res = await this.$http.get(
-        "http://ec2-43-204-240-96.ap-south-1.compute.amazonaws.com/api/jd/users",
-        // "http://localhost:3000/api/jd/users",
-        { params: { searchValue, searchType } }
-      );
+      var res = await this.$http.get(this.apiUrl + "/jd/users", {
+        params: { searchValue, searchType },
+      });
       return res.data;
     } catch (err) {
       console.error(err);
+      return [];
+    }
+  }
+
+  async fetchUserDataByUserId(user_id) {
+    try {
+      var res = await this.$http.get(this.apiUrl + "/jd/users", {
+        params: { searchValue: user_id, searchType: "CN" },
+      });
+
+      if (res.data && res.data.length == 1) {
+        return res.data[0];
+      }
+
+      return {};
+    } catch (err) {
+      console.error(err);
+      return {};
+    }
+  }
+
+  async editUserData(user_data) {
+    try {
+      let res = await this.$http.post(this.apiUrl + "/jd/updateUser", user_data);
+      return res.data;
+    } catch (err) {
+      console.error(err);
+      return {};
     }
   }
 }

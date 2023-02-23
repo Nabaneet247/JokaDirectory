@@ -22,7 +22,7 @@
     "officeaddress": { "Label": "Office address", "editable": true },
     "officecity": { "Label": "Office city", "editable": true },
     "telephonenumber": { "Label": "Alternate phone number", "editable": true },
-    "pager": { "Label": "LinkedIn URL", "editable": true },
+    "pager": { "Label": "LinkedIn URL", "editable": true, "link": true},
     "summersCompany": { "Label": "Summer internship firm", "editable": true },
     "summersDomain": { "Label": "Summer internship domain", "editable": true },
     "finalsCompany": { "Label": "Finals firm", "editable": true },
@@ -46,6 +46,5 @@
     "mobile": { "Request param": "MOBILE", "Label": "Mobile No" },
     "roomNumber": { "Request param": "ROOM_NO", "Label": "Room No" },
     "hostel": { "Request param": "HOSTEL", "Label": "Hostel" }
-  },
-  "UI Groups" : ["PGP", "PGPEX"]
+  }
 }

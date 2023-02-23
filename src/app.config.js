@@ -4,21 +4,27 @@ app.config([
   "$locationProvider",
   "$routeProvider",
   "$httpProvider",
-  function config(
-    $locationProvider,
-    $routeProvider,
-    $httpProvider,
-  ) {
+  function config($locationProvider, $routeProvider, $httpProvider) {
     $locationProvider.hashPrefix("");
     $routeProvider
       .when("/jd", {
         template: "<search></search>",
       })
-      /* .when("/user/:id", {
-        template: "<view-user></view-user>",
+      .when("/jd/:id", {
+        template: "<view-user user=$resolve.userData></view-user>",
+        resolve: {
+          userData: function (backendService, $route) {
+            return backendService.fetchUserDataByUserId($route.current.params.id);
+          },
+        },
       })
-      .when("/user/:id/edit", {
-        template: "<edit-user></edit-user>",
+      /* .when("/jd/:id/edit", {
+        template: "<edit-user user=$resolve.userData></edit-user>",
+        resolve: {
+          userData: function (backendService, $route) {
+            return backendService.fetchUserDataByUserId($route.current.params.id);
+          },
+        },
       }) */
       .otherwise({
         redirectTo: "/jd",

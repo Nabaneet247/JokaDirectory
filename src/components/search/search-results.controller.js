@@ -1,13 +1,14 @@
 export default class SearchResultsController {
   constructor($scope) {
     this.$scope = $scope;
+    // this.serachResults is inhertited from search component
   }
 
   $onInit() {
     this.sortProperty = "batch";
     // this.sortProperty = "displayName";
     this.sortReverse = true;
-    this.userGroupLabels = ["Students", "Exchange Stduents", "Faculty", "Staff", "TTA", "Others"];
+    this.userGroupLabels = ["Students", "CEMS/STEP", "Faculty", "Staff", "TTA", "Others"];
     this.userGroupsCount = [0, 0, 0, 0, 0, 0];
     this.userGroups = [];
   }
@@ -41,7 +42,7 @@ export default class SearchResultsController {
         this.userGroups[5].users.push(this.searchResults[i]);
       }
     }
-    console.log(this.userGroups);
+    // console.log(this.userGroups);
   }
 
   showUserGroup(id) {

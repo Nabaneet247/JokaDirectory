@@ -4,12 +4,15 @@ export default class SearchController {
     this.$scope = $scope;
     this.backendService = backendService;
     this.searchTypes = Object.values(constants["Search Type Mappings"]);
-    this.searchType = this.searchTypes[0];
+    this.searchType = this.searchTypes[0]["Request param"];
   }
 
   $onInit() {
     this.results = [];
     this.token = window.localStorage.getItem("joka_auth_token");
+    // this.searchTypes.forEach((x) => {x.selected = false});
+    // this.searchTypes[0].selected = true;
+    // console.log(this.searchTypes)
   }
 
   saveToken() {
@@ -21,12 +24,14 @@ export default class SearchController {
     
     this.results = await this.backendService.makeSearchRequest(
       this.searchValue,
-      this.searchType['Request param']
+      this.searchType
     );
+
+    // Check for empty array and display no users found message
     this.$scope.$apply();
   }
 
   isSearchValueValid() {
-    return (this.searchValue.length > 3);
+    return (this.searchValue.length >= 3);
   }
 }

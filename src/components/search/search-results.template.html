@@ -1,13 +1,26 @@
 <div ng-if="$ctrl.searchResults.length > 0">
-  <div class="">
-    <button ng-repeat="userGroup in $ctrl.userGroups" class="mx-2" ng-click="$ctrl.showUserGroup(userGroup.id)">{{userGroup.label}} - {{userGroup.users.length}}</button>
+  <hr class="hr" />
+
+
+  <div>
+    <ul class="nav nav-pills nav-justified mb-3">
+      <li
+        class="nav-item"
+        ng-repeat="userGroup in $ctrl.userGroups track by $index"
+        ng-click="$ctrl.showUserGroup(userGroup.id)">
+        <a
+          class="nav-link jd-search-group-tab"
+          ng-class="userGroup.displaying ? ['active','border', 'border-dark', 'border-3'] : undefined">
+          {{userGroup.label}} - {{userGroup.users.length}}
+        </a>
+      </li>
+    </ul>
   </div>
 
   <div ng-repeat="userGroup in $ctrl.userGroups">
-    <!-- <p>{{userGroup}}</p> -->
     <div
       ng-if="userGroup.displaying"
-      class="jd-search-results-container d-flex flex-wrap align-items-stretch jd-scrollbar">
+      class="jd-search-results-container d-flex flex-wrap align-items-stretch">
       <div ng-repeat="userData in userGroup.users" class="col-12 col-sm-6 p-2">
         <div class="card h-100 search-result-box">
           <user-card user="userData" search-type="$ctrl.searchType"></user-card>
