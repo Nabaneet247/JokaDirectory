@@ -38,6 +38,13 @@ export default class ViewUserController {
   }
 
   async editUser() {
+    // LDAP doesn't accept blank strings, need to pass null
+    for (let key in this.edited_user) {
+      if (this.edited_user[key] !== "false" && !this.edited_user[key]) {
+        this.edited_user[key] = null;
+      }
+    }
+
     let edited_user = await this.backendService.editUserData(this.edited_user);
     
     if (!edited_user) {
