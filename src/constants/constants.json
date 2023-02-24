@@ -34,7 +34,7 @@
   },
   "Search Type Mappings": {
     "displayName": { "Request param": "NAME", "Label": "Name" },
-    "regno": { "Request param": "REG_NO", "Label": "Reg No" },
+    "regno": { "Request param": "REG_NO", "Label": "Reg Number" },
     "batch": { "Request param": "BATCH", "Label": "Batch" },
     "homecity": { "Request param": "HOME_CITY", "Label": "Home City" },
     "company": { "Request param": "COMPANY", "Label": "Company" },
@@ -43,8 +43,8 @@
     "officecity": { "Request param": "OFFICE_CITY", "Label": "Office City" },
     "ugDegree": { "Request param": "UG_DEGREE", "Label": "UG Degree" },
     "ugCollege": { "Request param": "UG_COLLEGE", "Label": "UG Institute" },
-    "mobile": { "Request param": "MOBILE", "Label": "Mobile No" },
-    "roomNumber": { "Request param": "ROOM_NO", "Label": "Room No" },
+    "mobile": { "Request param": "MOBILE", "Label": "Mobile Number" },
+    "roomNumber": { "Request param": "ROOM_NO", "Label": "Room Number" },
     "hostel": { "Request param": "HOSTEL", "Label": "Hostel" }
   }
 }

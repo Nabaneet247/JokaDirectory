@@ -45,6 +45,8 @@ export default class SearchResultsController {
     // console.log(this.userGroups);
   }
 
+
+
   showUserGroup(id) {
     this.userGroups.forEach((x) => {
       x.displaying = false;

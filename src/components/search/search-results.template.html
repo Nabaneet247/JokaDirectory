@@ -1,27 +1,27 @@
 <div ng-if="$ctrl.searchResults.length > 0">
-  <hr class="hr" />
-
+  <div class="px-2"><hr class="hr" /></div>
 
   <div>
-    <ul class="nav nav-pills nav-justified mb-3">
-      <li
-        class="nav-item"
+    <div class="d-flex flex-wrap mb-1 px-lg-2">
+      <div
+        class="col-4 align-self-center"
         ng-repeat="userGroup in $ctrl.userGroups track by $index"
         ng-click="$ctrl.showUserGroup(userGroup.id)">
-        <a
-          class="nav-link jd-search-group-tab"
-          ng-class="userGroup.displaying ? ['active','border', 'border-dark', 'border-3'] : undefined">
-          {{userGroup.label}} - {{userGroup.users.length}}
-        </a>
-      </li>
-    </ul>
+        <div
+          class="nav-link mx-2 my-1 px-2 py-1"
+          ng-class="userGroup.displaying ? ['jd-search-group-tab-active'] : ['jd-search-group-tab-inactive']">
+          {{userGroup.label.toUpperCase()}} (<span ng-show="userGroup.users.length > 200">200+</span
+          ><span ng-hide="userGroup.users.length > 200">{{userGroup.users.length}}</span>)
+        </div>
+      </div>
+    </div>
   </div>
 
   <div ng-repeat="userGroup in $ctrl.userGroups">
     <div
       ng-if="userGroup.displaying"
       class="jd-search-results-container d-flex flex-wrap align-items-stretch">
-      <div ng-repeat="userData in userGroup.users" class="col-12 p-2">
+      <div ng-repeat="userData in userGroup.users" class="col-12 col-lg-6 pb-3 px-lg-2">
         <div class="card h-100 search-result-box">
           <user-card user="userData" search-type="$ctrl.searchType"></user-card>
         </div>

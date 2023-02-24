@@ -21,11 +21,15 @@
   overflow-y: scroll;
 }
 
-.jd-search-types {
+.jd-search-types-container {
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-width: 0.1rem;
   border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.5);
+}
+
+.jd-search-type {
+  margin: 0;
 }
 
 .jd-search-type-label {
@@ -58,11 +62,31 @@
   background-color: aliceblue;
 }
 
-.jd-search-group-tab {
+.jd-search-group-tab-inactive {
   cursor: pointer;
-  font-weight: bold !important;
-  font-size: 0.7rem !important;
-  color: black !important;
+  font-size: 1rem;
+  border-radius: 0.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  color: black;
+  background-color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+.jd-search-group-tab-inactive:hover {
+  background-color: white;
+  font-weight: bold;
+}
+
+.jd-search-group-tab-active {
+  cursor: default;
+  font-size: 1rem ;
+  border: 1px solid rgba(52, 51, 51, 0.5);
+  border-width: 0.25rem;
+  border-radius: 0.2rem;
+  color: black;
+  background-color: white;
+  text-align: center;
+  font-weight: bold;
 }
 
 .jd-scrollbar::-webkit-scrollbar {

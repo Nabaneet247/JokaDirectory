@@ -11,11 +11,11 @@ export default class SearchController {
     this.searchValue = "";
     this.results = [];
     this.token = window.localStorage.getItem("joka_auth_token");
-    this.token = "";
   }
 
   saveToken() {
     window.localStorage.setItem("joka_auth_token", this.token);
+    this.token = "";
   }
 
   async search() {
