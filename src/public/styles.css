@@ -5,18 +5,26 @@
 }
 
 .jd-base-container {
-  /* overflow: hidden; */
-  display: flex; /*added*/
+  display: flex;
   flex-direction: column;
-  max-height: 90vh;
+  max-height: 100vh;
   border-radius: 0.75rem;
   background: rgba(255, 255, 255, 0.2);
-  /* background: white; */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: saturate(120%) blur(10px);
   -webkit-backdrop-filter: saturate(120%) blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  /* transition: max-height 5s cubic-bezier(0.6, -0.28, 0.74, 0.05); Will be back */
+}
+
+.jd-nav-button-bar {
+  width:100%;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 0.5rem;;
+}
+
+.jd-nav-button {
+  float: space-between;
 }
 
 .jd-banner {
@@ -26,19 +34,18 @@
   margin-bottom: 2rem;
   flex-direction: row;
   height: 20%;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 5px;
   width: 100%;
 }
 
-@media (max-width: 769px) {
-  .jd-banner-logo-container {
-    width: 20px;
+@media (min-width: 799px) {
+  .jd-banner {
+    margin-bottom: 20px;
   }
 }
 
 .jd-banner-logo-container {
-  padding-right: 50px;
+  padding-right: 20px;
   border-right: 1px solid #fff;
   flex-direction: column;
   height: 80%;
@@ -47,21 +54,22 @@
   justify-content: center;
 }
 
-@media (max-width: 769px) {
-  .jd-banner-logo {
-    width: 100px;
+@media (min-width: 799px) {
+  .jd-banner-logo-container {
+    padding-right: 40px;
   }
 }
 
 .jd-banner-logo {
-  width: 120px;
+  width: 45px;
 }
 
-@media (max-width: 769px) {
-  .jd-title-container {
-    padding-left: 20px;
+@media (min-width: 799px) {
+  .jd-banner-logo {
+    width: 120px;
   }
 }
+
 .jd-title-container {
   font-family: "Exo 2", sans-serif;
   color: white;
@@ -70,23 +78,37 @@
   flex-direction: column;
   height: 80%;
   justify-content: center;
-  padding-left: 50px;
+  padding-left: 20px;
 }
 
-@media (max-width: 769px) {
-  .jd-title {
-    font-size: 3rem;
-    margin-bottom: 5px;
+@media (min-width: 799px) {
+  .jd-title-container {
+    padding-left: 40px;
   }
 }
 
 .jd-title {
-  font-size: 4.5rem;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+@media (min-width: 799px) {
+  .jd-title {
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+  }
 }
 
 .jd-view {
   overflow-y: scroll;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 799px) {
+  .jd-view {
+    overflow-y: scroll;
+  }
 }
 
 .jd-search-types-container {
@@ -134,8 +156,13 @@
 }
 
 .jd-search-results-container {
-  padding: 10px;
-  /* background-color: #808080; */
+  padding: 0;
+}
+
+@media (min-width: 799px) {
+  .jd-search-results-container {
+    padding: 10px;
+  }
 }
 
 .jd-search-result-box {
@@ -158,6 +185,9 @@
 }
 
 .jd-search-group-tab-active {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   cursor: default;
   font-size: 1rem;
   border: 1px solid rgba(52, 51, 51, 0.5);
@@ -170,20 +200,39 @@
 }
 
 .jd-scrollbar::-webkit-scrollbar {
-  width: 12px;
+  width: 0px;
   /* background-color: #f5f5f5; */
 }
 
 .jd-scrollbar::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); */
   background-color: #f5f5f500;
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
 .jd-scrollbar::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); */
   background-color: #ffffffc8;
+}
+
+@media (min-width: 799px) {
+  .jd-scrollbar::-webkit-scrollbar {
+    width: 12px;
+    /* background-color: #f5f5f5; */
+  }
+
+  .jd-scrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #f5f5f500;
+    border-radius: 10px;
+  }
+
+  .jd-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffffc8;
+  }
 }
 
 .jd-view-user-modal {
@@ -195,11 +244,20 @@
   left: 0px;
   width: 100%;
   height: 100%;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  padding-top: 8rem;
-  padding-bottom: 4rem;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
   overflow-y: scroll;
+}
+
+@media (min-width: 799px) {
+  .jd-view-user-modal {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+  }
 }
 
 .jd-modal-close-icon {

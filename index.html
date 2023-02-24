@@ -2,6 +2,7 @@
 <html ng-app="jd">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Joka Directory</title>
     <link rel="shortcut icon" href="/jd/src/public/favicon.png" type="image/x-icon" />
     <!-- Font Awesome -->
@@ -24,9 +25,12 @@
     <link href="/jd/src/public/styles.css" rel="stylesheet" />
   </head>
   <body class="bg-image jd-bg-image">
-    <div id="logout"></div>
-    <div class="container-lg my-5 py-2 jd-base-container">
-      <div class="jd-banner">
+    <div class="container-lg my-lg-5 py-lg-2 my-2 pb-2 jd-base-container">
+      <div class="jd-nav-button-bar">
+        <div id="logout" class="jd-nav-button"></div>
+      </div>
+      
+      <div class="jd-banner mt-1">
         <div class="jd-banner-logo-container">
           <img src="/jd/src/public/iimc_logo.png" alt="IIM Calcutta" class="jd-banner-logo" />
         </div>

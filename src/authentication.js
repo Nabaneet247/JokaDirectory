@@ -46,11 +46,6 @@ function addLogout() {
          `;
 
     let cssString = `
-          #logout {
-              position: fixed;
-              right:10px;
-              top: 10px;
-          }
           .logout-button {
               background-color: #00000030;
               border: none;
@@ -97,5 +92,5 @@ function addLogout() {
   }
 }
 
-authenticate();
+// authenticate();
 addLogout();
