@@ -1,44 +1,51 @@
+var env = {};
+if (window) {
+  Object.assign(env, window.__env);
+}
+
 function authenticate() {
-    var token = window.localStorage.getItem("joka_auth_token");
-    if (token && token !== "null") {
-      if (token && token !== "null") {
-        var formData = new URLSearchParams();
-        formData.append("access_token", token);
-        fetch("http://ec2-43-204-240-96.ap-south-1.compute.amazonaws.com/api/auth/verifyAccessToken", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-            joka_auth_token: token,
-          },
-          body: formData.toString(),
-        })
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (body) {
-            if (body.error) {
-              console.log("Cleared local joka_auth_token!!!");
-              localStorage.removeItem("joka_auth_token");
-              window.open(`/home?redirectUrl=${window.location.href}`, "_self");
-            } else {
-              console.log("User already logged in");
-            }
-          })
-          .catch((err) => {
-            console.error(err);
-          });
-      }
-    }
+  var token = window.localStorage.getItem("joka_auth_token");
+  if (token && token !== "null") {
+    var formData = new URLSearchParams();
+    formData.append("access_token", token);
+    fetch(`${env.apiUrl}/auth/verifyAccessToken`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        joka_auth_token: token,
+      },
+      body: formData.toString(),
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (body) {
+        if (body.error) {
+          console.log("Cleared local joka_auth_token!!!");
+          localStorage.removeItem("joka_auth_token");
+          window.open(`?redirectUrl=${window.location.href}`, "_self");
+        } else {
+          console.log("User already logged in");
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  } else {
+    console.log("Cleared local joka_auth_token!!!");
+    localStorage.removeItem("joka_auth_token");
+    window.open(`?redirectUrl=${window.location.href}`, "_self");
   }
-  
-  function addLogout() {
-    var logoutDiv = document.getElementById("logout");
-    if (logoutDiv) {
-      let htmlString = `
+}
+
+function addLogout() {
+  var logoutDiv = document.getElementById("logout");
+  if (logoutDiv) {
+    let htmlString = `
          <button id="logoutButton" class="logout-button">Logout</button>
          `;
-  
-      let cssString = `
+
+    let cssString = `
           #logout {
               position: fixed;
               right:10px;
@@ -55,28 +62,39 @@ function authenticate() {
               font-size: 15px;
           }
          `;
-  
-      let head = document.querySelector("head");
-      let style = document.createElement("style");
-      style.innerHTML = cssString;
-      head.appendChild(style);
-      logoutDiv.innerHTML = htmlString;
-      document
-        .getElementById("logoutButton")
-        .addEventListener("click", function () {
-          let logoutURL = "http://ec2-43-204-240-96.ap-south-1.compute.amazonaws.com/api/auth/logout";
-          fetch(logoutURL)
-            .then(function () {
-              console.log("Cleared local joka_auth_token!!!");
-              localStorage.removeItem("joka_auth_token");
-              window.open(`http://ec2-43-204-240-96.ap-south-1.compute.amazonaws.com/home?redirectUrl=${window.location.href}`, "_self");
-            })
-            .catch(function (err) {
-              console.error(err);
-            });
-        });
-    }
+
+    let head = document.querySelector("head");
+    let style = document.createElement("style");
+    style.innerHTML = cssString;
+    head.appendChild(style);
+    logoutDiv.innerHTML = htmlString;
+    document.getElementById("logoutButton").addEventListener("click", function () {
+      var token = window.localStorage.getItem("joka_auth_token");
+      if (token && token !== "null") {
+        let logoutURL = `${env.apiUrl}/auth/logout`;
+        fetch(logoutURL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            joka_auth_token: token,
+          },
+        })
+          .then(function () {
+            console.log("Cleared local joka_auth_token!!!");
+            localStorage.removeItem("joka_auth_token");
+            window.open(`${env.loginPageRedirectUrl}${window.location.href}`, "_self");
+          })
+          .catch(function (err) {
+            console.error(err);
+          });
+      } else {
+        console.log("Cleared local joka_auth_token!!!");
+        localStorage.removeItem("joka_auth_token");
+        window.open(`${env.jokaLifeUrl}`, "_self");
+      }
+    });
   }
-  
-  authenticate();
-  addLogout();
+}
+
+authenticate();
+addLogout();
