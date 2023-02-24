@@ -34,7 +34,7 @@
 .jd-search-by-info-bar {
   background: white;
   border-radius: 0.25rem;
-  color:black;
+  color: black;
   font-size: 1.2rem;
   text-align: center;
   cursor: pointer;
@@ -91,7 +91,7 @@
 
 .jd-search-group-tab-active {
   cursor: default;
-  font-size: 1rem ;
+  font-size: 1rem;
   border: 1px solid rgba(52, 51, 51, 0.5);
   border-width: 0.25rem;
   border-radius: 0.2rem;
@@ -118,6 +118,22 @@
   background-color: #ffffffc8;
 }
 
+.jd-view-user-modal {
+  background-color: rgba(50, 50, 50, 0.75);
+  border-radius: 0.75rem;
+  position: fixed;
+  z-index: 2000;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+  overflow-y: scroll;
+}
+
 .jd-edit-mode-card {
   background-color: rgb(255, 255, 255);
   color: black;
@@ -133,14 +149,14 @@
   font-size: 1rem;
   font-weight: bold;
   width: 100%;
-  display:block;
+  display: block;
   line-height: 1.6;
-  transition: all .5s linear;
+  transition: all 0.5s linear;
   min-height: auto;
   padding: 0.32rem 0.75rem;
 }
 
 .jd-user-form-field-disabled {
-  color:rgb(37, 38, 40);
+  color: rgb(37, 38, 40);
   background-color: #d7d6d6;
 }

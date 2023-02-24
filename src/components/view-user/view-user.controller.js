@@ -27,9 +27,13 @@ export default class ViewUserController {
   }
 
   closeEditMode() {
+    this.closeEditModeWithoutApply();
+    this.$scope.$apply();
+  }
+
+  closeEditModeWithoutApply() {
     this.editMode = false;
     this.edited_user = undefined;
-    this.$scope.$apply();
   }
 
   resetData() {
@@ -57,6 +61,6 @@ export default class ViewUserController {
   }
 
   closeWindow() {
-    window.close();
+    this.modalActiveFlag = false;
   }
 }

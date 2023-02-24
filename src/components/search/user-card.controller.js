@@ -3,9 +3,19 @@ export default class UserCardController {
     this.$scope = $scope;
     this.constants = constants;
     // this.user is inherited from search-results
+    this.isViewUserModalActive = false;
   }
 
-  $onInit() {}
+  $onInit() {
+  }
 
   $onChanges(changes) {}
+
+  openModal() {
+    this.isViewUserModalActive = true;
+  }
+
+  closeModal() {
+    this.isViewUserModalActive = false;
+  }
 }

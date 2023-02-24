@@ -7,7 +7,7 @@
 
   <div ng-hide="$ctrl.editMode">
     <div class="card-body d-flex flex-row flex-wrap">
-      <div ng-repeat="item in $ctrl.labels" class="col-12 col-sm-6 mb-2">
+      <div ng-repeat="item in $ctrl.labels" class="col-12 col-lg-6 mb-2">
         <div class="px-2">
           <b>{{item.Label}}:</b>
           <a href="{{$ctrl.user[item.key]}}" target="_blank" ng-show="item.link"> {{$ctrl.user[item.key]}} </a>
@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="card-footer text-muted d-flex flex-row justify-content-center">
-      <button class="btn btn-primary mx-5" ng-click="$ctrl.closeEditMode()">BACK</button>
+      <button class="btn btn-primary mx-5" ng-click="$ctrl.closeEditModeWithoutApply()">CANCEL</button>
       <button
         class="btn btn-success mx-5"
         ng-if="$ctrl.user.EDIT_PROFILE_ACCESS"

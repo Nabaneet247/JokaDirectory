@@ -4,7 +4,7 @@
     "mail": { "Label": "Email", "editable": false },
     "displayName": { "Label": "Name", "editable": false },
     "dateofbirth": { "Label": "Birthday", "editable": false },
-    "mobile": { "Label": "Mobile number", "editable": false },
+    "mobile": { "Label": "Mobile number", "editable": true },
     "altemail": { "Label": "Personal email", "editable": true },
     "departmentNumber": { "Label": "Course", "editable": false },
     "joiningyear": { "Label": "Joining year", "editable": false },

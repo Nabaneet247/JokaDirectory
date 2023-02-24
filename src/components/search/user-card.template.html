@@ -1,26 +1,34 @@
 <div class="mb-2" ng-if="$ctrl.user.displayName">
   <div class="card-body">
-    <a href="#/jd/{{$ctrl.user.cn}}" target="_blank"><h4 class="card-title">{{$ctrl.user.displayName}}</h4></a>
-    <h6 class="card-subtitle mb-2 text-muted" ng-if="$ctrl.user.regno">Reg No: {{$ctrl.user.regno}}</h6>
+    <a href="" ng-click="$ctrl.openModal()"
+      ><h4 class="card-title">{{$ctrl.user.displayName}}</h4></a
+    >
+    <h6 class="card-subtitle mb-2 text-muted" ng-if="$ctrl.user.regno">
+      Reg No: {{$ctrl.user.regno}}
+    </h6>
     <div class="card-text mb-1">
-        <span><b>{{$ctrl.constants["Label Mappings"].departmentNumber["Label"]}}: </b></span>
-        <span>{{$ctrl.user.departmentNumber}}</span>
+      <span><b>{{$ctrl.constants["Label Mappings"].departmentNumber["Label"]}}: </b></span>
+      <span>{{$ctrl.user.departmentNumber}}</span>
     </div>
     <div class="card-text mb-1">
-        <span><b>{{$ctrl.constants["Label Mappings"].batch["Label"]}}: </b></span>
-        <span>{{$ctrl.user.batch}}</span>
+      <span><b>{{$ctrl.constants["Label Mappings"].batch["Label"]}}: </b></span>
+      <span>{{$ctrl.user.batch}}</span>
     </div>
     <div class="card-text mb-1">
-        <span><b>{{$ctrl.constants["Label Mappings"].hostel["Label"]}}: </b></span>
-        <span>{{$ctrl.user.hostel}}</span>
+      <span><b>{{$ctrl.constants["Label Mappings"].hostel["Label"]}}: </b></span>
+      <span>{{$ctrl.user.hostel}}</span>
     </div>
     <div class="card-text mb-1">
-        <span><b>{{$ctrl.constants["Label Mappings"].mail["Label"]}}: </b></span>
-        <span>{{$ctrl.user.mail}}</span>
+      <span><b>{{$ctrl.constants["Label Mappings"].mail["Label"]}}: </b></span>
+      <span>{{$ctrl.user.mail}}</span>
     </div>
     <div class="card-text mb-1">
-        <span><b>{{$ctrl.constants["Label Mappings"].mobile["Label"]}}: </b></span>
-        <span>{{$ctrl.user.mobile}}</span>
+      <span><b>{{$ctrl.constants["Label Mappings"].mobile["Label"]}}: </b></span>
+      <span>{{$ctrl.user.mobile}}</span>
     </div>
+  </div>
+
+  <div ng-if="$ctrl.isViewUserModalActive" class="jd-view-user-modal jd-scrollbar">
+    <view-user user="$ctrl.user" modal-active-flag="$ctrl.isViewUserModalActive"></view-user>
   </div>
 </div>
