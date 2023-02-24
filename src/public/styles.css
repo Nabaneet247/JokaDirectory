@@ -1,3 +1,9 @@
+.jd-bg-image {
+  background-image: url("/jd/src/public/background.jpg");
+  height: 100vh;
+  backdrop-filter: blur(5px);
+}
+
 .jd-base-container {
   /* overflow: hidden; */
   display: flex; /*added*/
@@ -194,6 +200,12 @@
   padding-top: 8rem;
   padding-bottom: 4rem;
   overflow-y: scroll;
+}
+
+.jd-modal-close-icon {
+  float: right;
+  display: inline;
+  cursor: pointer;
 }
 
 .jd-edit-mode-card {

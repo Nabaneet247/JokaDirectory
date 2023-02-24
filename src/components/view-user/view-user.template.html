@@ -1,8 +1,10 @@
 <div class="card" ng-class="{'jd-edit-mode-card' : $ctrl.editMode}">
-  <div class="card-header text-center">
-    <h2 class="my-1">
+  <div class="card-header">
+    <h2 class="my-1 text-center mx-auto">
       {{$ctrl.user.displayName}} <span class="text-muted">(User ID: {{$ctrl.user.cn}})</span>
+      <span><i class="fas fa-times p-2 jd-modal-close-icon" ng-click="$ctrl.closeWindow()"></i></span>
     </h2>
+    
   </div>
 
   <div ng-hide="$ctrl.editMode">

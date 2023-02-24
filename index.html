@@ -23,27 +23,19 @@
       rel="stylesheet" />
     <link href="/jd/src/public/styles.css" rel="stylesheet" />
   </head>
-  <body>
-    <div
-      class="bg-image"
-      style="
-        background-image: url('/jd/src/public/background.jpg');
-        height: 100vh;
-        backdrop-filter: blur(5px);
-      ">
-      <div id="logout"></div>
-      <div class="container-lg my-5 py-2 jd-base-container">
-        <div class="jd-banner">
-          <div class="jd-banner-logo-container">
-            <img src="/jd/src/public/iimc_logo.png" alt="IIM Calcutta" class="jd-banner-logo" />
-          </div>
-          <div class="jd-title-container">
-            <span class="jd-title">JOKA DIRECTORY</span>
-          </div>
+  <body class="bg-image jd-bg-image">
+    <div id="logout"></div>
+    <div class="container-lg my-5 py-2 jd-base-container">
+      <div class="jd-banner">
+        <div class="jd-banner-logo-container">
+          <img src="/jd/src/public/iimc_logo.png" alt="IIM Calcutta" class="jd-banner-logo" />
         </div>
-
-        <div class="jd-view jd-scrollbar" ng-view></div>
+        <div class="jd-title-container">
+          <span class="jd-title">JOKA DIRECTORY</span>
+        </div>
       </div>
+
+      <div class="jd-view jd-scrollbar" ng-view></div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
@@ -58,6 +50,6 @@
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
-    <script defer src="/jd/src/authentication.js"></script>
+    <!-- <script defer src="/jd/src/authentication.js"></script> -->
   </body>
 </html>
