@@ -3,7 +3,7 @@ export default class SearchController {
     this.$scope = $scope;
     this.backendService = backendService;
     this.searchTypes = Object.values(constants["Search Type Mappings"]);
-    this.searchType = this.searchTypes[0]["Request param"];
+    this.searchType = this.searchTypes[0];
     this.devMode = configData.devMode;
   }
 
@@ -11,6 +11,7 @@ export default class SearchController {
     this.searchValue = "";
     this.results = [];
     this.token = window.localStorage.getItem("joka_auth_token");
+    this.searchTypesHidden = true;
   }
 
   saveToken() {
@@ -18,12 +19,16 @@ export default class SearchController {
     this.token = "";
   }
 
+  toggleSearchTypesVisibility() {
+    this.searchTypesHidden = !this.searchTypesHidden;
+  }
+
   async search() {
     if (!this.isSearchValueValid()) return;
-    
+
     this.results = await this.backendService.makeSearchRequest(
       this.searchValue,
-      this.searchType
+      this.searchType["Request param"]
     );
 
     // Check for empty array and display no users found message
@@ -31,6 +36,6 @@ export default class SearchController {
   }
 
   isSearchValueValid() {
-    return (this.searchValue.length >= 3);
+    return this.searchValue.length >= 3;
   }
 }
