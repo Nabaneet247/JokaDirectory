@@ -25,7 +25,7 @@ function authenticate() {
           localStorage.removeItem("joka_auth_token");
           window.open(`?redirectUrl=${window.location.href}`, "_self");
         } else {
-          console.log("User already logged in");
+          console.log("User session verified");
         }
       })
       .catch((err) => {
@@ -82,7 +82,8 @@ function addLogout() {
           .then(function () {
             console.log("Cleared local joka_auth_token!!!");
             localStorage.removeItem("joka_auth_token");
-            window.open(`${env.loginPageRedirectUrl}${window.location.href}`, "_self");
+            // window.open(`${env.loginPageRedirectUrl}${window.location.href}`, "_self");
+            window.open(`${env.jokaLifeUrl}`, "_self");
           })
           .catch(function (err) {
             console.error(err);
