@@ -6,10 +6,10 @@
 <div class="mb-2 py-1">
   <div class="px-2 mb-2">
     <div class="jd-search-types-container d-flex flex-wrap p-1">
-      <div class="jd-search-by-info-bar col-12">
+      <div class="jd-search-by-info-bar col-12" ng-click="$ctrl.toggleSearchTypesVisibility()">
         <span>Search by: <b>{{$ctrl.searchType['Label']}}</b></span>
-        <i class="fas fa-xs fa-chevron-down mx-2" ng-show="$ctrl.searchTypesHidden" ng-click="$ctrl.toggleSearchTypesVisibility()"></i>
-        <i class="fas fa-xs fa-chevron-up mx-2" ng-hide="$ctrl.searchTypesHidden" ng-click="$ctrl.toggleSearchTypesVisibility()"></i>
+        <i class="fas fa-xs fa-chevron-down mx-2" ng-show="$ctrl.searchTypesHidden"></i>
+        <i class="fas fa-xs fa-chevron-up mx-2" ng-hide="$ctrl.searchTypesHidden"></i>
       </div>
       <div ng-hide="$ctrl.searchTypesHidden" class="jd-search-type-buttons-group px-2 pt-2">
       <div class="jd-search-type form-check form-check-inline col-4 col-lg-3" ng-repeat="item in $ctrl.searchTypes">
