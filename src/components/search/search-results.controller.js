@@ -11,6 +11,7 @@ export default class SearchResultsController {
     this.userGroupLabels = ["Students", "CEMS/STEP", "Faculty", "Staff", "TTA", "Others"];
     this.userGroupsCount = [0, 0, 0, 0, 0, 0];
     this.userGroups = [];
+    this.userGroupsHidden = true;
   }
 
   $onChanges(changes) {
@@ -45,8 +46,6 @@ export default class SearchResultsController {
     // console.log(this.userGroups);
   }
 
-
-
   showUserGroup(id) {
     this.userGroups.forEach((x) => {
       x.displaying = false;
@@ -72,5 +71,18 @@ export default class SearchResultsController {
 
       return typeof v1 == "undefined" ? 1 : -1;
     };
+  }
+
+  getDisplayedUserGroupLabel() {
+    let displayedLabel = "";
+    this.userGroups.forEach((element) => {
+      console.log(element.displaying, element.label);
+      if (element.displaying) displayedLabel = element.label;
+    });
+    return displayedLabel;
+  }
+
+  toggleUserGroupsVisibility() {
+    this.userGroupsHidden = !this.userGroupsHidden;
   }
 }

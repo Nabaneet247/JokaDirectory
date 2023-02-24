@@ -1,8 +1,16 @@
 <div ng-if="$ctrl.searchResults.length > 0">
   <div class="px-lg-2 px-1"><hr class="hr my-2" /></div>
 
-  <div>
-    <div class="d-flex flex-wrap mb-1 mb-lg-3 px-lg-2">
+  <div class="jd-search-types-container d-flex flex-wrap mb-lg-2 mb-1 px-1 pt-1">
+    <div class="jd-search-by-info-bar col-12 mb-1" ng-click="$ctrl.toggleUserGroupsVisibility()">
+      <span>Showing records for <b>{{$ctrl.getDisplayedUserGroupLabel()}}</b></span>
+      <!-- Fix padding for chevron -->
+      <i class="fas fa-sm fa-chevron-down mx-2" style="float:right; padding-top:0.8rem;" ng-show="$ctrl.userGroupsHidden"></i>
+      <i class="fas fa-sm fa-chevron-up mx-2" style="float:right; padding-top:0.8rem;" ng-hide="$ctrl.userGroupsHidden"></i>
+    </div>
+    <div
+      ng-hide="$ctrl.userGroupsHidden"
+      class="jd-user-group-buttons-sections col-12 d-flex flex-wrap mb-1 px-lg-2">
       <div
         class="col-6 col-lg-4 align-self-center"
         ng-repeat="userGroup in $ctrl.userGroups track by $index"
@@ -10,7 +18,8 @@
         <div
           class="nav-link mx-lg-2 mx-1 my-1 px-2 py-1"
           ng-class="userGroup.displaying ? ['jd-search-group-tab-active'] : ['jd-search-group-tab-inactive']">
-          {{userGroup.label.toUpperCase()}} (<span ng-show="userGroup.users.length > 1000">1000+</span
+          {{userGroup.label.toUpperCase()}} (<span ng-show="userGroup.users.length > 1000"
+            >1000+</span
           ><span ng-hide="userGroup.users.length > 1000">{{userGroup.users.length}}</span>)
         </div>
       </div>
