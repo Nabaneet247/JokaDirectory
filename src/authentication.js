@@ -92,5 +92,5 @@ function addLogout() {
   }
 }
 
-// authenticate();
+authenticate();
 addLogout();
