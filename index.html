@@ -12,25 +12,38 @@
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
       rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap"
+      rel="stylesheet" />
     <!-- MDB -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css"
       rel="stylesheet" />
     <link href="/jd/src/public/styles.css" rel="stylesheet" />
   </head>
-  <body
-    class="bg-image"
-    style="background-image: url('/jd/src/public/background.jpg'); height: 100vh">
-    <div id="logout"></div>
-    <div class="container-lg my-5 py-2 jd-base-container">
-      <div
-        name="JD Banner"
-        class="d-flex justify-content-center jd-banner"
-        style="max-height: 12vh">
-        <img src="/jd/src/public/jd_banner.png" class="img-fluid" />
-        <!-- <img src="public/jd_logo.png" style="object-fit: contain" /> -->
+  <body>
+    <div
+      class="bg-image"
+      style="
+        background-image: url('/jd/src/public/background.jpg');
+        height: 100vh;
+        backdrop-filter: blur(5px);
+      ">
+      <div id="logout"></div>
+      <div class="container-lg my-5 py-2 jd-base-container">
+        <div class="jd-banner">
+          <div class="jd-banner-logo-container">
+            <img src="/jd/src/public/iimc_logo.png" alt="IIM Calcutta" class="jd-banner-logo" />
+          </div>
+          <div class="jd-title-container">
+            <span class="jd-title">JOKA DIRECTORY</span>
+          </div>
+        </div>
+
+        <div class="jd-view jd-scrollbar" ng-view></div>
       </div>
-      <div class="jd-view jd-scrollbar" ng-view></div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
