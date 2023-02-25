@@ -20,6 +20,7 @@ function authenticate() {
         console.log(response);
         if (response) {
           console.log(Object.keys(response));
+          console.log(response.status);
           console.log(response.body);
           console.log(response.json());
         }
@@ -31,6 +32,7 @@ function authenticate() {
           localStorage.removeItem("joka_auth_token");
           window.open(`${env.loginPageRedirectUrl}${window.location.href}`, "_self");
         } else {
+          console.log(body);
           console.log("User session verified");
         }
       })
