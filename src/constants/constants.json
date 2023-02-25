@@ -33,7 +33,7 @@
     "hobbies": { "Label": "Hobbies", "editable": true }
   },
   "Search Type Mappings": {
-    "displayName": { "Request param": "NAME", "Label": "Name" },
+    "displayName": { "Request param": "NAME", "Label": "Name", "min_length": 4 },
     "regno": { "Request param": "REG_NO", "Label": "Reg Number" },
     "batch": { "Request param": "BATCH", "Label": "Batch" },
     "homecity": { "Request param": "HOME_CITY", "Label": "Home City" },

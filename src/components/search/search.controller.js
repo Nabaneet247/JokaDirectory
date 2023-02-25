@@ -36,6 +36,7 @@ export default class SearchController {
   }
 
   isSearchValueValid() {
-    return this.searchValue.length >= 3;
+    let min_length = this.searchType.min_length ? this.searchType.min_length : 3;
+    return this.searchValue.length >= min_length;
   }
 }
