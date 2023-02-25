@@ -44,6 +44,7 @@
     "ugDegree": { "Request param": "UG_DEGREE", "Label": "UG Degree", "min_length": 4 },
     "ugCollege": { "Request param": "UG_COLLEGE", "Label": "UG Institute", "min_length": 5 },
     "mobile": { "Request param": "MOBILE", "Label": "Mobile Number" },
-    "roomNumber": { "Request param": "ROOM_NO", "Label": "Room Number" }
+    "roomNumber": { "Request param": "ROOM_NO", "Label": "Room Number" },
+    "hostel": { "Request param": "HOSTEL", "Label": "Hostel" }
   }
 }
