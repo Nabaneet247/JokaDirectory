@@ -23,7 +23,7 @@ export default class InterceptorService {
 
   responseError = (error) => {
     if (error.status == 401) {
-      // window.open(`${this.loginPageRedirectUrl}${window.location.href}`, "_self");
+      window.open(`${this.loginPageRedirectUrl}${window.location.href}`, "_self");
     }
     return error;
   };
