@@ -17,22 +17,23 @@ function authenticate() {
       body: formData.toString(),
     })
       .then(function (response) {
-        console.log(response);
+        /* console.log(response);
         if (response) {
           console.log(Object.keys(response));
           console.log(response.status);
           console.log(response.body);
           console.log(response.json());
         }
-        console.log(JSON.stringify(response));
+        console.log(JSON.stringify(response)); */
+        response.json();
       })
       .then(function (body) {
+        console.log(body);
         if (body && body.error) {
           console.log("Cleared local joka_auth_token!!!");
           localStorage.removeItem("joka_auth_token");
           window.open(`${env.loginPageRedirectUrl}${window.location.href}`, "_self");
         } else {
-          console.log(body);
           console.log("User session verified");
         }
       })
