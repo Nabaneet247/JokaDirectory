@@ -17,7 +17,7 @@ function authenticate() {
       body: formData.toString(),
     })
       .then(function (response) {
-        console.log(response);
+        console.log(JSON.stringify(response));
       })
       .then(function (body) {
         if (body && body.error) {
