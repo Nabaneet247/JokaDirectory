@@ -2,9 +2,12 @@ export default class SearchController {
   constructor($scope, backendService, constants, configData) {
     this.$scope = $scope;
     this.backendService = backendService;
-    this.searchTypes = Object.values(constants["Search Type Mappings"]);
-    this.searchType = this.searchTypes[0];
     this.devMode = configData.devMode;
+    this.searchTypes = [];
+    for (const key of Object.keys(constants["Search Type Mappings"])) {
+      this.searchTypes.push({ key: key, ...constants["Search Type Mappings"][key] });
+    }
+    this.searchType = this.searchTypes[0];
   }
 
   $onInit() {
