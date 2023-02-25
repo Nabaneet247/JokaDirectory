@@ -27,12 +27,12 @@ function authenticate() {
         console.log(JSON.stringify(response)); */
         // response.json();
         if (response) {
-          if (response.status !== "200") {
+          if (response.ok) {
+            console.log("User session verified");
+          } else {
             localStorage.removeItem("joka_auth_token");
             console.log("Cleared local joka_auth_token!!!");
             window.open(`${env.loginPageRedirectUrl}${window.location.href}`, "_self");
-          } else {
-            console.log("User session verified");
           }
         }
       })
