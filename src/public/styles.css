@@ -261,8 +261,10 @@
 }
 
 .jd-modal-close-icon {
-  float: right;
-  display: inline;
+  cursor: pointer;
+}
+
+.jd-modal-edit-back-icon {
   cursor: pointer;
 }
 
