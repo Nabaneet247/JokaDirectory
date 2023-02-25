@@ -43,7 +43,6 @@ export default class SearchResultsController {
         this.userGroups[5].users.push(this.searchResults[i]);
       }
     }
-    // console.log(this.userGroups);
   }
 
   showUserGroup(id) {
@@ -76,7 +75,6 @@ export default class SearchResultsController {
   getDisplayedUserGroupLabel() {
     let displayedLabel = "";
     this.userGroups.forEach((element) => {
-      console.log(element.displaying, element.label);
       if (element.displaying) displayedLabel = element.label;
     });
     return displayedLabel;

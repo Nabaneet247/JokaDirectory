@@ -20,7 +20,7 @@ function authenticate() {
         console.log(response);
       })
       .then(function (body) {
-        if (body.error) {
+        if (body && body.error) {
           console.log("Cleared local joka_auth_token!!!");
           localStorage.removeItem("joka_auth_token");
           window.open(`${env.loginPageRedirectUrl}${window.location.href}`, "_self");
