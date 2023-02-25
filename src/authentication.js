@@ -25,7 +25,7 @@ function authenticate() {
           console.log(response.json());
         }
         console.log(JSON.stringify(response)); */
-        response.json();
+        // response.json();
       })
       .then(function (body) {
         console.log(body);
