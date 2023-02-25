@@ -1,0 +1,77 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+      "joka-directory": {
+        "projectType": "application",
+        "schematics": {
+          "@schematics/angular:component": {
+            "prefix": "app"
+          }
+        },
+        "root": "",
+        "sourceRoot": "src",
+        "prefix": "app",
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:browser",
+            "options": {
+              "outputPath": "dist",
+              "index": "src/index.html",
+              "main": "src/app.module.js",
+              "tsConfig": "src/tsconfig.app.json",
+              "assets": [
+                "src/favicon.ico",
+                "src/assets"
+              ],
+              "scripts": [],
+              "styles": [
+                "src/styles.css"
+              ]
+            },
+            "configurations": {
+              "production": {
+                "fileReplacements": [],
+                "optimization": true,
+                "outputHashing": "all",
+                "sourceMap": false,
+                "namedChunks": false,
+                "aot": true,
+                "extractLicenses": true,
+                "vendorChunk": false,
+                "buildOptimizer": true
+              }
+            }
+          },
+          "serve": {
+            "builder": "@angular-devkit/build-angular:dev-server",
+            "options": {
+              "browserTarget": "joka-directory:build",
+              "port": 5000,
+              "publicHost": "http://localhost:5000",
+              "servePath": "/jd"
+            },
+            "configurations": {
+              "production": {
+                "browserTarget": "joka-directory:build:production"
+              }
+            }
+          }
+        }
+      }
+    },
+    "defaultProject": "joka-directory",
+    "cli": {
+      "defaultCollection": "@schematics/angular",
+      "analytics": false
+    },
+    "deploy": {
+      "builder": "@angular-devkit/build-angular:deploy",
+      "options": {
+        "dest": "/var/www/html/jd",
+        "baseHref": "/jd"
+      }
+    }
+  }
+  

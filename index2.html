@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="jd">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Joka Directory</title>
+    <link rel="shortcut icon" href="/jd/src/public/favicon.png" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap"
+      rel="stylesheet" />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css"
+      rel="stylesheet" />
+    <link href="/jd/src/public/styles.css" rel="stylesheet" />
+  </head>
+  <body class="bg-image jd-bg-image">
+    <div class="container-lg my-lg-5 py-lg-2 my-2 pb-2 jd-base-container">
+      <div class="jd-nav-button-bar">
+        <div id="logout" class="jd-nav-button"></div>
+      </div>
+      
+      <div class="jd-banner mt-1">
+        <div class="jd-banner-logo-container">
+          <img src="/jd/src/public/iimc_logo.png" alt="IIM Calcutta" class="jd-banner-logo" />
+        </div>
+        <div class="jd-title-container">
+          <span class="jd-title">JOKA DIRECTORY</span>
+        </div>
+      </div>
+
+      <div class="jd-view jd-scrollbar" ng-view></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+
+    <script type="module" src="/jd/src/constants/jd-constants.module.js"></script>
+    <script type="module" src="/jd/src/services/jd-services.module.js"></script>
+    <script type="module" src="/jd/src/components/jd-components.module.js"></script>
+    <script src="/jd/src/env.js"></script>
+    <script src="/jd/src/app.module.js"></script>
+    <script src="/jd/src/app.config.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+    <!-- <script defer src="/jd/src/authentication.js"></script> -->
+  </body>
+</html>

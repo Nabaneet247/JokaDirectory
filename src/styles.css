@@ -1,5 +1,5 @@
 .jd-bg-image {
-  background-image: url("/jd/src/public/background.jpg");
+  background-image: url("assets/background.jpg");
   height: 100vh;
   backdrop-filter: blur(5px);
 }

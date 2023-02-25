@@ -14,11 +14,11 @@ app.config([
   function config($locationProvider, $routeProvider, $httpProvider) {
     $locationProvider.hashPrefix("");
     $routeProvider
-      .when("/jd", {
+      .when("/", {
         template: "<search></search>",
       })
       .otherwise({
-        redirectTo: "/jd",
+        redirectTo: "/",
       });
 
     $httpProvider.interceptors.push("interceptorService");
