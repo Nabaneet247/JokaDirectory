@@ -42,4 +42,8 @@ export default class SearchController {
     let min_length = this.searchType.min_length ? this.searchType.min_length : 3;
     return this.searchValue.length >= min_length;
   }
+
+  clearSearchField() {
+    this.searchValue = "";
+  }
 }

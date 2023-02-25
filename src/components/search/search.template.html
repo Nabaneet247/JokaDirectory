@@ -20,7 +20,8 @@
             type="radio"
             name="{{item.Label}}"
             ng-model="$ctrl.searchType"
-            ng-value="item" />
+            ng-value="item"
+            ng-change="$ctrl.clearSearchField()" />
           <label class="form-check-label jd-search-type-label" for="{{item.Label}}">
             {{item.Label}}
           </label>
