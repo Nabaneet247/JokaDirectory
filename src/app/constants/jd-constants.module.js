@@ -1,3 +1,3 @@
-import constants from "./constants.json" assert { type: "json" };
+import constants from "./constants.js";
 
 angular.module("jd-constants", []).constant("constants", constants);

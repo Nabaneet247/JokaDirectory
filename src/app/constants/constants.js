@@ -1,4 +1,4 @@
-{
+const constants = {
   "Label Mappings": {
     "cn": { "Label": "User ID", "editable": false },
     "mail": { "Label": "Email", "editable": false },
@@ -46,4 +46,6 @@
     "mobile": { "Request param": "MOBILE", "Label": "Mobile Number" },
     "roomNumber": { "Request param": "ROOM_NO", "Label": "Room Number" }
   }
-}
+};
+
+export default constants;
