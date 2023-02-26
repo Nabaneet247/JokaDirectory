@@ -35,7 +35,7 @@ const constants = {
   "Search Type Mappings": {
     "displayName": { "Request param": "NAME", "Label": "Name", "min_length": 4 },
     "regno": { "Request param": "REG_NO", "Label": "Reg Number" },
-    "batch": { "Request param": "BATCH", "Label": "Batch" },
+    // "batch": { "Request param": "BATCH", "Label": "Batch" },
     "homecity": { "Request param": "HOME_CITY", "Label": "Home City" },
     "company": { "Request param": "COMPANY", "Label": "Company" },
     "summersCompany": { "Request param": "SUMMERS_COMPANY", "Label": "Summers Company", "min_length": 4 },
@@ -44,7 +44,8 @@ const constants = {
     "ugDegree": { "Request param": "UG_DEGREE", "Label": "UG Degree", "min_length": 4 },
     "ugCollege": { "Request param": "UG_COLLEGE", "Label": "UG Institute", "min_length": 5 },
     "mobile": { "Request param": "MOBILE", "Label": "Mobile Number" },
-    "roomNumber": { "Request param": "ROOM_NO", "Label": "Room Number" }
+    "roomNumber": { "Request param": "ROOM_NO", "Label": "Room Number" },
+    // "hostel": { "Request param": "HOSTEL", "Label": "Hostel" }
   }
 };
 
