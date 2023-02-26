@@ -12,9 +12,18 @@ export default class ViewUserController {
     // Displayed in header
     delete this.labelMappings.displayName;
     delete this.labelMappings.cn;
-    this.labels =[];
+    this.labels = [];
     for (const key in this.labelMappings) {
-      this.labels.push({ ...this.labelMappings[key], key});
+      this.labels.push({ ...this.labelMappings[key], key });
+    }
+
+    // modifying LinkedIn URL
+    if (this.user.pager) {
+      console.log(this.user.displayName, typeof this.user.pager);
+      let indexOfLinkedUrl = this.user.pager.indexOf("linkedin.com");
+      let linkedInUrl = this.user.pager.substring(indexOfLinkedUrl);
+      this.user.pager = `https://www.${linkedInUrl}`;
+      console.log(this.user.pager);
     }
 
     this.editMode = false;
@@ -50,9 +59,11 @@ export default class ViewUserController {
     }
 
     let edited_user = await this.backendService.editUserData(this.edited_user);
-    
+
     if (!edited_user) {
-      window.alert("There was some error in updating your data. Please contact ISG or try again later");
+      window.alert(
+        "There was some error in updating your data. Please contact ISG or try again later"
+      );
       this.closeEditMode();
       return;
     }
