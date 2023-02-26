@@ -15,6 +15,9 @@ export default class SearchController {
     this.results = [];
     this.token = window.localStorage.getItem("joka_auth_token");
     this.searchTypesHidden = true;
+    this.$scope.$watch("$ctrl.searchValue",function(newValue,oldValue,scope){
+      scope.$ctrl.search();
+    });
   }
 
   saveToken() {

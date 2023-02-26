@@ -36,7 +36,7 @@
         type="text"
         class="jd-search-bar form-control"
         ng-model="$ctrl.searchValue"
-        ng-keyup="$ctrl.search()"
+        ng-model-options="{ debounce : 500 }"
         placeholder="Type to search..." />
     </div>
     <div class="align-self-center">
