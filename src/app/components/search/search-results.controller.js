@@ -1,7 +1,7 @@
 export default class SearchResultsController {
   constructor($scope) {
     this.$scope = $scope;
-    // this.serachResults is inhertited from search component
+    // this.searchResults, this.searchType, this.searchRequestFired is inhertited from search component
   }
 
   $onInit() {
@@ -15,6 +15,8 @@ export default class SearchResultsController {
   }
 
   $onChanges(changes) {
+    if (!this.searchRequestFired) return;
+
     var comparator = this.sortUsersBy(this.sortProperty, this.sortReverse);
     if (this.searchResults.length == 0) return;
 

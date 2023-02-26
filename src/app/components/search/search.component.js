@@ -11,7 +11,7 @@ search
   })
   .component("searchResults", {
     templateUrl: "app/components/search/search-results.template.html",
-    bindings: { searchResults: "<", searchType: "<" },
+    bindings: { searchResults: "<", searchType: "<", searchRequestFired: "<" },
     controller: SearchResultsController,
   })
   .component("userCard", {

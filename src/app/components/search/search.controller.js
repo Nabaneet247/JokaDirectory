@@ -15,9 +15,10 @@ export default class SearchController {
     this.results = [];
     this.token = window.localStorage.getItem("joka_auth_token");
     this.searchTypesHidden = true;
-    this.$scope.$watch("$ctrl.searchValue",function(newValue,oldValue,scope){
+    this.$scope.$watch("$ctrl.searchValue", function (newValue, oldValue, scope) {
       scope.$ctrl.search();
     });
+    this.searchRequestFired = false;
   }
 
   saveToken() {
@@ -30,12 +31,17 @@ export default class SearchController {
   }
 
   async search() {
-    if (!this.isSearchValueValid()) return;
+    if (!this.isSearchValueValid()) {
+      this.searchRequestFired = false;
+      return;
+    }
 
     this.results = await this.backendService.makeSearchRequest(
       this.searchValue,
       this.searchType["Request param"]
     );
+
+    this.searchRequestFired = true;
 
     // Check for empty array and display no users found message
     this.$scope.$apply();
@@ -48,5 +54,6 @@ export default class SearchController {
 
   clearSearchField() {
     this.searchValue = "";
+    this.searchRequestFired = false;
   }
 }

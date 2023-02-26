@@ -5,8 +5,14 @@
     <div class="jd-search-by-info-bar col-12 mb-1" ng-click="$ctrl.toggleUserGroupsVisibility()">
       <span>Showing records for <b>{{$ctrl.getDisplayedUserGroupLabel()}}</b></span>
       <!-- Fix padding for chevron -->
-      <i class="fas fa-sm fa-chevron-down mx-2" style="float:right; padding-top:0.8rem;" ng-show="$ctrl.userGroupsHidden"></i>
-      <i class="fas fa-sm fa-chevron-up mx-2" style="float:right; padding-top:0.8rem;" ng-hide="$ctrl.userGroupsHidden"></i>
+      <i
+        class="fas fa-sm fa-chevron-down mx-2"
+        style="float: right; padding-top: 0.8rem"
+        ng-show="$ctrl.userGroupsHidden"></i>
+      <i
+        class="fas fa-sm fa-chevron-up mx-2"
+        style="float: right; padding-top: 0.8rem"
+        ng-hide="$ctrl.userGroupsHidden"></i>
     </div>
     <div
       ng-hide="$ctrl.userGroupsHidden"
@@ -36,5 +42,10 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div ng-if="$ctrl.searchRequestFired && $ctrl.searchResults && $ctrl.searchResults.length == 0">
+  <div class="pt-1 text-center jd-no-records-found-text">
+    <span>No records were found</span>
   </div>
 </div>
