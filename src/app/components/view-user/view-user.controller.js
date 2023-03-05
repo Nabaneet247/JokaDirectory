@@ -1,8 +1,9 @@
 export default class ViewUserController {
-  constructor(constants, backendService, $scope) {
+  constructor(constants, backendService, $scope, configData) {
     this.labelMappings = constants["Label Mappings"];
     this.backendService = backendService;
     this.$scope = $scope;
+    this.configData = configData;
   }
 
   $onInit() {
@@ -24,6 +25,8 @@ export default class ViewUserController {
       let linkedInUrl = this.user.pager.substring(indexOfLinkedUrl);
       this.user.pager = `https://www.${linkedInUrl}`;
     }
+
+    this.defaultImageUrl = `${this.configData.userImagesPath}/default.jpg`;
 
     this.editMode = false;
   }

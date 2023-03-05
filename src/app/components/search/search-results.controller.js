@@ -1,7 +1,6 @@
 export default class SearchResultsController {
-  constructor($scope, configData) {
+  constructor($scope) {
     this.$scope = $scope;
-    this.configData = configData;
   }
 
   $onInit() {
@@ -45,7 +44,6 @@ export default class SearchResultsController {
       } else {
         this.userGroups[5].users.push(this.searchResults[i]);
       }
-      this.searchResults[i].imageUrl = `${this.configData.jokaLifeUrl}/${this.searchResults[i].imageUrl}`;
     }
   }
 
