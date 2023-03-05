@@ -10,14 +10,21 @@
         ng-hide="$ctrl.editMode"
         ng-click="$ctrl.openEditMode()"></i>
     </div>
-    <div class="col-10 my-1 mx-auto">
-      <h2 class="text-center">
+
+    <div class="col-10 my-1 mx-auto d-flex wrap-column">
+      <div class="jd-view-user-profile-image">
+        <img ng-src="{{$ctrl.user.imageUrl}}">
+      </div>
+
+      <h2 class="text-center jd-view-user-header-text">
         <span>{{$ctrl.user.displayName}}</span>
       </h2>
-      <h5 class="text-center">
+
+      <h5 class="text-center jd-view-user-header-text">
         <span class="text-muted">(User ID: {{$ctrl.user.cn}})</span>
       </h5>
     </div>
+
     <div class="col-1">
       <i class="fas fa-times fa-lg p-2 mt-3 jd-modal-close-icon" ng-click="$ctrl.closeWindow()"></i>
     </div>

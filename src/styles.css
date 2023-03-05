@@ -301,3 +301,17 @@
   font-weight: bold;
   font-size: 1.1rem;
 }
+
+.jd-view-user-header-text {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.jd-view-user-profile-image {
+  border-color: beige;
+  border-width: 0.25rem;
+  border-style: solid;
+  border-radius: 0.25rem;
+  height: 200px;
+  width: 200px;
+}

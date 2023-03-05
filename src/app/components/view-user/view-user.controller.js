@@ -6,6 +6,7 @@ export default class ViewUserController {
   }
 
   $onInit() {
+    // this.user is passed from user-card component
     if (!this.user) {
       this.user = { displayName: "This user doesn't exist" };
     }
@@ -19,11 +20,9 @@ export default class ViewUserController {
 
     // modifying LinkedIn URL
     if (this.user.pager) {
-      console.log(this.user.displayName, typeof this.user.pager);
       let indexOfLinkedUrl = this.user.pager.indexOf("linkedin.com");
       let linkedInUrl = this.user.pager.substring(indexOfLinkedUrl);
       this.user.pager = `https://www.${linkedInUrl}`;
-      console.log(this.user.pager);
     }
 
     this.editMode = false;

@@ -1,10 +1,11 @@
 export default class SearchResultsController {
-  constructor($scope) {
+  constructor($scope, configData) {
     this.$scope = $scope;
-    // this.searchResults, this.searchType, this.searchRequestFired is inhertited from search component
+    this.configData = configData;
   }
 
   $onInit() {
+    // this.searchResults, this.searchType, this.searchRequestFired is inhertited from search component
     this.sortProperty = "batch";
     // this.sortProperty = "displayName";
     this.sortReverse = true;
@@ -44,6 +45,7 @@ export default class SearchResultsController {
       } else {
         this.userGroups[5].users.push(this.searchResults[i]);
       }
+      this.searchResults[i].imageUrl = `${this.configData.jokaLifeUrl}/${this.searchResults[i].imageUrl}`;
     }
   }
 
