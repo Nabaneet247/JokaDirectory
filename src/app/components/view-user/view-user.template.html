@@ -1,19 +1,24 @@
 <div class="card" ng-class="{'jd-edit-mode-card' : $ctrl.editMode}">
   <div class="card-header d-flex flex-row px-1 px-lg-2">
-    <div class="col-1" ng-show="$ctrl.user.EDIT_PROFILE_ACCESS">
-      <i
-        class="fas fa-chevron-left fa-lg p-2 mt-3 jd-modal-edit-back-icon"
-        ng-show="$ctrl.editMode"
-        ng-click="$ctrl.closeEditModeWithoutApply()"></i>
-      <i
-        class="fas fa-edit fa-lg p-2 mt-3 jd-modal-edit-back-icon"
-        ng-hide="$ctrl.editMode"
-        ng-click="$ctrl.openEditMode()"></i>
+    <div class="col-1">
+      <div ng-if="$ctrl.user.EDIT_PROFILE_ACCESS">
+        <i
+          class="fas fa-chevron-left fa-lg p-2 mt-3 jd-modal-edit-back-icon"
+          ng-show="$ctrl.editMode"
+          ng-click="$ctrl.closeEditModeWithoutApply()"></i>
+        <i
+          class="fas fa-edit fa-lg p-2 mt-3 jd-modal-edit-back-icon"
+          ng-hide="$ctrl.editMode"
+          ng-click="$ctrl.openEditMode()"></i>
+      </div>
     </div>
 
     <div class="col-10 my-1 mx-auto d-flex flex-column align-items-center">
       <div>
-        <img class="jd-view-user-profile-image" ng-src="{{$ctrl.user.imageUrl}}" ng-on-error="this.src = '{{$ctrl.defaultImageUrl}}'"/>
+        <img
+          class="jd-view-user-profile-image"
+          ng-src="{{$ctrl.user.imageUrl}}"
+          ng-on-error="this.src = '{{$ctrl.defaultImageUrl}}'" />
         <div class="jd-view-user-profile-image-edit-button" ng-if="$ctrl.user.EDIT_PROFILE_ACCESS">
           <i class="fas fa-lg fa-camera"></i>
         </div>
