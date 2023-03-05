@@ -322,3 +322,11 @@
     width: 200px;
   }
 }
+
+.jd-view-user-profile-image-edit-button {
+  border-radius: 50%;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  transform: translate(50%, 50%);
+}
