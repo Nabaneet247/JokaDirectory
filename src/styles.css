@@ -243,7 +243,7 @@
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 92vh;
+  height: 90vh;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
@@ -255,7 +255,7 @@
   .jd-view-user-modal {
     padding-left: 4rem;
     padding-right: 4rem;
-    padding-top: 8rem;
+    padding-top: 4rem;
     padding-bottom: 4rem;
   }
 }
