@@ -312,7 +312,14 @@
   border-width: 0.25rem;
   border-style: solid;
   border-radius: 50%;
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   margin-bottom: 0.5rem
+}
+
+@media (min-width: 799px) {
+  .jd-view-user-profile-image {
+    height: 200px;
+    width: 200px;
+  }
 }
