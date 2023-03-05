@@ -325,8 +325,12 @@
 
 .jd-view-user-profile-image-edit-button {
   border-radius: 50%;
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
-  transform: translate(50%, 50%);
-}
+  transform: translate(150%, -125%);
+  background-color: rgb(100,100,100,0.75);
+  width: 40px;
+  height: 40px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
