@@ -325,7 +325,7 @@
 
 .jd-view-user-profile-image-edit-button {
   border-radius: 50%;
-  transform: translate(270%, -110%);
+  transform: translate(320%, -150%);
   background-color: rgb(100, 100, 100, 0.75);
   width: 35px;
   height: 35px;
@@ -338,7 +338,7 @@
 
 @media (min-width: 799px) {
   .jd-view-user-profile-image-edit-button {
-    transform: translate(310%, -110%);
+    transform: translate(400%, -170%);
     height: 40px;
     width: 40px;
   }
