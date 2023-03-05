@@ -308,9 +308,6 @@
 }
 
 .jd-view-user-profile-image {
-  border-color: beige;
-  border-width: 0.25rem;
-  border-style: solid;
   border-radius: 50%;
   height: 150px;
   width: 150px;
