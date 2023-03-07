@@ -34,8 +34,7 @@ export default class ViewUserController {
 
     this.croppedImageValid = false;
     this.$scope.$watch("$ctrl.croppedImage", function (newValue, oldValue, scope) {
-      let size = scope.$ctrl.getCroppedImageSize();
-      scope.$ctrl.croppedImageValid = size >= 5000;
+      scope.$ctrl.croppedImageValid = scope.$ctrl.isCroppedImageOK();
       console.log(scope.$ctrl.croppedImageValid);
     });
   }
@@ -95,18 +94,15 @@ export default class ViewUserController {
     this.uploadImageModalActive = false;
   }
 
-  getCroppedImageSize() {
+  isCroppedImageOK() {
     if (!this.croppedImage) return 0;
     let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
-    return blob.size;
+    return blob.size >= 5000;
   }
 
   uploadUserImage() {
-    let size = this.getCroppedImageSize();
-    if (size < 5000) {
-      this.croppedImage = "";
-      return;
-    }
+    if (!this.isCroppedImageOK) return;
+    let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
     let result = this.backendService.uploadUserImage(blob, this.user.cn);
     console.log(result);
     this.user.imageUrl = this.croppedImage;
