@@ -87,21 +87,8 @@ export default class ViewUserController {
     this.uploadImageModalActive = false;
   }
 
-/*   userImageSelected(evt) {
-    console.log("Hi");
-    console.log(evt);
-    var file = evt.currentTarget.files[0];
-    var reader = new FileReader();
-    reader.onload = function (evt) {
-      $scope.$apply(function ($scope) {
-        $scope.myImage = evt.target.result;
-      });
-    };
-    reader.readAsDataURL(file);
-  } */
-
   uploadUserImage() {
-    this.closeImageUploadModal();
+    console.log(this.$scope.selectedImage);
     console.log(this.$scope.croppedImage);
   }
 }
