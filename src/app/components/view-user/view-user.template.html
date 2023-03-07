@@ -43,10 +43,8 @@
               ng-model="selectedImage"
               ngf-pattern="image/jpg,image/png"
               class="jd-user-image-crop-area">
-              <p ng-if="!selectedImage" style="text-align: center">
-                <span>Please choose an image having size between 20-500 KBSelected image is not supported</span>
-                <br />
-                <span ng-if="!$ctrl.croppedImageValid">Selected image is not supported</span>
+              <p ng-if="!$ctrl.croppedImageValid" style="text-align: center">
+                <span>Please select an image having size between 10-500 KB</span>
               </p>
               <img-crop
                 image="selectedImage | ngfDataUrl"

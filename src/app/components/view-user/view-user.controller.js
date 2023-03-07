@@ -98,7 +98,7 @@ export default class ViewUserController {
   isCroppedImageOK() {
     if (!this.croppedImage) return 0;
     let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
-    return blob.size >= 5000;
+    return blob.size >= 9000;
   }
 
   uploadUserImage() {
