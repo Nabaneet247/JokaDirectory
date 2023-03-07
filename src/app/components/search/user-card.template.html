@@ -1,43 +1,38 @@
-<div class="d-flex flex-column">
-  <div class="jd-user-card-image-row d-flex flex-row justify-content-center">
-    <img src="{{$ctrl.user.imageUrl}}" />
+<div class="mb-lg-2 mb-1" ng-if="$ctrl.user.displayName">
+  <div class="card-body">
+    <a href="" ng-click="$ctrl.openModal()"
+      ><h4 class="card-title">{{$ctrl.user.displayName}}</h4></a
+    >
+    <h6 class="card-subtitle mb-2 text-muted" ng-if="$ctrl.user.regno">
+      Reg No: {{$ctrl.user.regno}}
+    </h6>
+    <div class="card-text mb-1" ng-if="$ctrl.extraSearchTypePresent">
+      <span><b>{{$ctrl.searchType["Label"]}}: </b></span>
+      <span>{{$ctrl.user[$ctrl.searchType.key]}}</span>
+    </div>
+    <div class="card-text mb-1">
+      <span><b>{{$ctrl.constants["Label Mappings"].departmentNumber["Label"]}}: </b></span>
+      <span>{{$ctrl.user.departmentNumber}}</span>
+    </div>
+    <div class="card-text mb-1">
+      <span><b>{{$ctrl.constants["Label Mappings"].batch["Label"]}}: </b></span>
+      <span>{{$ctrl.user.batch}}</span>
+    </div>
+    <div class="card-text mb-1">
+      <span><b>{{$ctrl.constants["Label Mappings"].hostel["Label"]}}: </b></span>
+      <span>{{$ctrl.user.hostel}}</span>
+    </div>
+    <div class="card-text mb-1">
+      <span><b>{{$ctrl.constants["Label Mappings"].mail["Label"]}}: </b></span>
+      <span>{{$ctrl.user.mail}}</span>
+    </div>
+    <div class="card-text mb-1">
+      <span><b>{{$ctrl.constants["Label Mappings"].mobile["Label"]}}: </b></span>
+      <span>{{$ctrl.user.mobile}}</span>
+    </div>
   </div>
-  <div class="card search-result-card flex-grow-1 mb-lg-2 mb-1" ng-if="$ctrl.user.displayName">
-    <div class="card-body">
-      <a href="" ng-click="$ctrl.openModal()"
-        ><h4 class="card-title">{{$ctrl.user.displayName}}</h4></a
-      >
-      <h6 class="card-subtitle mb-2 text-muted" ng-if="$ctrl.user.regno">
-        Reg No: {{$ctrl.user.regno}}
-      </h6>
-      <div class="card-text mb-1" ng-if="$ctrl.extraSearchTypePresent">
-        <span><b>{{$ctrl.searchType["Label"]}}: </b></span>
-        <span>{{$ctrl.user[$ctrl.searchType.key]}}</span>
-      </div>
-      <div class="card-text mb-1">
-        <span><b>{{$ctrl.constants["Label Mappings"].departmentNumber["Label"]}}: </b></span>
-        <span>{{$ctrl.user.departmentNumber}}</span>
-      </div>
-      <div class="card-text mb-1">
-        <span><b>{{$ctrl.constants["Label Mappings"].batch["Label"]}}: </b></span>
-        <span>{{$ctrl.user.batch}}</span>
-      </div>
-      <div class="card-text mb-1">
-        <span><b>{{$ctrl.constants["Label Mappings"].hostel["Label"]}}: </b></span>
-        <span>{{$ctrl.user.hostel}}</span>
-      </div>
-      <div class="card-text mb-1">
-        <span><b>{{$ctrl.constants["Label Mappings"].mail["Label"]}}: </b></span>
-        <span>{{$ctrl.user.mail}}</span>
-      </div>
-      <div class="card-text mb-1">
-        <span><b>{{$ctrl.constants["Label Mappings"].mobile["Label"]}}: </b></span>
-        <span>{{$ctrl.user.mobile}}</span>
-      </div>
-    </div>
 
-    <div ng-if="$ctrl.isViewUserModalActive" class="jd-view-user-modal jd-scrollbar">
-      <view-user user="$ctrl.user" modal-active-flag="$ctrl.isViewUserModalActive"></view-user>
-    </div>
+  <div ng-if="$ctrl.isViewUserModalActive" class="jd-view-user-modal jd-scrollbar">
+    <view-user user="$ctrl.user" modal-active-flag="$ctrl.isViewUserModalActive"></view-user>
   </div>
 </div>
