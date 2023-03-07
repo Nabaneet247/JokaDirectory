@@ -359,10 +359,28 @@
   color: white;
 }
 
-/* Can't change name of this class. ng-img-crop looks for this class name and sets canvas size accordingly*/
-.cropArea {
+.jd-user-image-crop-area {
   background-color: rgb(101, 101, 101);
   overflow: hidden;
   height: 400px;
   width: 600px;
+}
+
+/* line 1, ../../source/scss/ng-img-crop.scss */
+img-crop {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+/* line 7, ../../source/scss/ng-img-crop.scss */
+img-crop canvas {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  /* mobile webkit */
 }
