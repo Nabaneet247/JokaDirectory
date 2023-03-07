@@ -56,7 +56,7 @@ export default class BackendService {
         method: 'POST',
         url: this.apiUrl + "/jd/saveUserImage",
         data: form_data,
-        headers: { 'Content-Type': undefined},});
+        headers: { 'Content-Type': 'multipart/form-data'},});
       console.log(res);
       return true;
     } catch (err) {
