@@ -362,8 +362,15 @@
 .jd-user-image-crop-area {
   background-color: rgb(101, 101, 101);
   overflow: hidden;
-  height: 400px;
-  width: 600px;
+  height: 300px;
+  width: 300px;
+}
+
+@media (min-width: 799px) {
+  jd-user-image-crop-area {
+    height: 400px;
+    width: 400px;
+  }
 }
 
 /* line 1, ../../source/scss/ng-img-crop.scss */
