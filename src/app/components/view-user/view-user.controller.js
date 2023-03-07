@@ -96,6 +96,7 @@ export default class ViewUserController {
   }
 
   getCroppedImageSize() {
+    if (!this.croppedImage) return 0;
     let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
     return blob.size;
   }
