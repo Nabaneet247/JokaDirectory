@@ -1,6 +1,6 @@
 import ViewUserController from "./view-user.controller.js";
 
-var viewUser = angular.module("view-user", ['ngImgCrop']);
+var viewUser = angular.module("view-user", ['ngFileUpload', 'ngImgCrop']);
 
 viewUser
   .component("viewUser", {
