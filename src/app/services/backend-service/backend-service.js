@@ -57,7 +57,7 @@ export default class BackendService {
         data: form_data,
         headers: { "Content-Type": undefined },
       });
-      return res.status == 200;
+      return (res.status == 200);
     } catch (err) {
       console.error(err);
       return false;

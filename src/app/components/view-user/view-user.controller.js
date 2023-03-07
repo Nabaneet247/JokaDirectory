@@ -101,10 +101,10 @@ export default class ViewUserController {
     return blob.size >= 9000 && blob.size <= 500000; //ng-img-crop returns a cropped image of res 300x300, search by 300],f=
   }
 
-  uploadUserImage() {
+  async uploadUserImage() {
     if (!this.isCroppedImageOK) return;
     let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
-    let result = this.backendService.uploadUserImage(blob, this.user.cn);
+    let result = await this.backendService.uploadUserImage(blob, this.user.cn);
     console.log(result);
     this.user.imageUrl = this.croppedImage;
     this.closeImageUploadModal();
