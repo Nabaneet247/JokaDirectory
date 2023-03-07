@@ -56,8 +56,7 @@ export default class BackendService {
         url: this.apiUrl + "/jd/saveUserImage",
         data: form_data,
         headers: { 'Content-Type': undefined},});
-      console.log(res);
-      return true;
+      return (res.status == 200);
     } catch (err) {
       console.error(err);
       return false;
