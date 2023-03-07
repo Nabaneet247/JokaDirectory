@@ -359,7 +359,8 @@
   color: white;
 }
 
-.jd-user-image-crop-area {
+/* Can't change name of this class. ng-img-crop looks for this class name and sets canvas size accordingly*/
+.cropArea {
   background-color: rgb(101, 101, 101);
   overflow: hidden;
   height: 400px;
