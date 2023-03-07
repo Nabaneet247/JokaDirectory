@@ -29,6 +29,7 @@ export default class ViewUserController {
     this.defaultImageUrl = `${this.configData.userImagesPath}/default.jpg`;
 
     this.editMode = false;
+    this.uploadImageModalActive = false;
   }
 
   openEditMode() {
@@ -75,5 +76,13 @@ export default class ViewUserController {
 
   closeWindow() {
     this.modalActiveFlag = false;
+  }
+
+  openImageUploadModal() {
+    this.uploadImageModalActive = true;
+  }
+
+  closeImageUploadModal() {
+    this.uploadImageModalActive = false;
   }
 }

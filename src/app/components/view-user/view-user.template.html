@@ -19,8 +19,20 @@
           class="jd-view-user-profile-image"
           ng-src="{{$ctrl.user.imageUrl}}"
           ng-on-error="this.src = '{{$ctrl.defaultImageUrl}}'" />
-        <div class="jd-view-user-profile-image-edit-button" ng-if="$ctrl.user.EDIT_PROFILE_ACCESS">
+        <div
+          class="jd-view-user-profile-image-edit-button"
+          ng-if="$ctrl.user.EDIT_PROFILE_ACCESS"
+          ng-click="$ctrl.openImageUploadModal()">
           <i class="fas fa-lg fa-camera"></i>
+        </div>
+        <div class="jd-edit-user-image-modal" ng-if="$ctrl.uploadImageModalActive">
+          <i
+            class="fas fa-times fa-lg p-2 mt-3 jd-modal-close-icon"
+            ng-click="$ctrl.closeImageUploadModal()"></i>
+          <img
+            class="jd-view-user-profile-image"
+            ng-src="{{$ctrl.user.imageUrl}}"
+            ng-on-error="this.src = '{{$ctrl.defaultImageUrl}}'" />
         </div>
       </div>
 
