@@ -48,6 +48,7 @@ export default class BackendService {
 
   async uploadUserImage(blobData, user_id) {
     try {
+      console.log(blobData);
       let res = await this.$http.post(this.apiUrl + "/jd/saveUserImage", {
         file: blobData,
         cn: user_id,
