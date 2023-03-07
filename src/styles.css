@@ -394,14 +394,14 @@ img-crop canvas {
 
 .jd-user-card-image-row {
   transform: translate(0%, 0%);
-  height: 50px;
-  background-color: black;
+  height: 80px;
+  background-color: rgb(0, 0, 0, 0);
 }
 
 .jd-user-card-image-row > img {
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
   rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
