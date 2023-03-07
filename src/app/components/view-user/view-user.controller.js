@@ -4,6 +4,8 @@ export default class ViewUserController {
     this.backendService = backendService;
     this.$scope = $scope;
     this.configData = configData;
+    this.selectedImage = "";
+    this.croppedImage = "";
   }
 
   $onInit() {
@@ -30,8 +32,9 @@ export default class ViewUserController {
 
     this.editMode = false;
     this.uploadImageModalActive = false;
-    this.selectedImage = "";
-    this.croppedImage = "";
+    this.$scope.$watch("$ctrl.selectedImage", function (newValue, oldValue, scope) {
+      scope.$ctrl.selectedImage = newValue;
+    });
   }
 
   openEditMode() {
@@ -89,7 +92,8 @@ export default class ViewUserController {
     this.uploadImageModalActive = false;
   }
 
-  userImageSelected(evt) {
+/*   userImageSelected(evt) {
+    console.log("Hi");
     console.log(evt);
     var file = evt.currentTarget.files[0];
     var reader = new FileReader();
@@ -99,7 +103,7 @@ export default class ViewUserController {
       });
     };
     reader.readAsDataURL(file);
-  }
+  } */
 
   uploadUserImage() {
     this.closeImageUploadModal();
