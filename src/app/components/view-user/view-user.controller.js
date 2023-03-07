@@ -32,10 +32,6 @@ export default class ViewUserController {
 
     this.editMode = false;
     this.uploadImageModalActive = false;
-    this.$scope.$watch("$ctrl.selectedImage", function (newValue, oldValue, scope) {
-      console.log("Changed");
-      scope.$ctrl.selectedImage = newValue;
-    });
   }
 
   openEditMode() {
@@ -108,5 +104,6 @@ export default class ViewUserController {
 
   uploadUserImage() {
     this.closeImageUploadModal();
+    console.log(this.croppedImage);
   }
 }

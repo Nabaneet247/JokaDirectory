@@ -34,20 +34,26 @@
             class="fas fa-times fa-lg p-2 mt-3 jd-modal-close-icon align-self-end"
             ng-click="$ctrl.closeImageUploadModal()"></i>
           <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-            <input type="file" class="form-control mb-4" ng-model="$ctrl.selectedImage" />
+            <button ngf-select class="btn btn-light mb-4" ng-model="$ctrl.selectedImage" accept="image/*">Select Picture</button>
             <div class="jd-user-image-crop-area">
-              <img
+              <!-- <img
                 class="jd-view-user-profile-image"
                 ng-src="{{$ctrl.user.imageUrl}}"
                 ng-on-error="this.src = '{{$ctrl.defaultImageUrl}}'" />
-
-              <img-crop image="$ctrl.selectedImage" result-image="$ctrl.croppedImage"></img-crop>
+              
+ -->
+              <div ngf-drop ng-model="$ctrl.selectedImage" ngf-pattern="image/*" class="jd-user-image-crop-area">
+                <img-crop
+                  image="$ctrl.selectedImage"
+                  result-image="$ctrl.croppedImage"
+                  ng-init="$ctrl.croppedImage=''">
+                </img-crop>
+              </div>
 
               <!-- <img
                 class="jd-view-user-profile-image"
                 ng-src="{{$ctrl.croppedImage}}"
                 ng-on-error="this.src = '{{$ctrl.defaultImageUrl}}'" /> -->
-
             </div>
           </div>
           <div class="d-flex flex-row justify-content-center">
