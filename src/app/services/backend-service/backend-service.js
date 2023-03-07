@@ -55,13 +55,7 @@ export default class BackendService {
         method: "POST",
         url: this.apiUrl + "/jd/saveUserImage",
         data: form_data,
-        headers: {
-          "Content-Type": undefined,
-          "If-Modified-Since": "0",
-          Pragma: "no-cache",
-          Expires: -1,
-          "Cache-Control": "no-cache, no-store, must-revalidate",
-        },
+        headers: { "Content-Type": undefined },
       });
       return res.status == 200;
     } catch (err) {
