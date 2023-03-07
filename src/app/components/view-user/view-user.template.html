@@ -46,26 +46,23 @@
               class="jd-user-image-crop-area">
               <img-crop
                 image="selectedImage | ngfDataUrl"
-                result-image="croppedImage"
-                ng-init="croppedImage=''">
+                result-image="$ctrl.croppedImage"
+                ng-init="$ctrl.croppedImage=''">
               </img-crop>
-              <p>{{croppedImage}}</p>
+              <p>{{$ctrl.croppedImage}}</p>
               <div>
-                <img ng-src="{{croppedImage}}" />
+                <img ng-src="{{$ctrl.croppedImage}}" />
             </div>
             </div>
-            <p>{{croppedImage}}</p>
-            <!-- <div>
-              <img ng-src="{{croppedImage}}" />
-            </div> -->
+            <p>{{$ctrl.croppedImage}}</p>
           </div>
-          <p>{{croppedImage}}</p>
+          <p>{{$ctrl.croppedImage}}</p>
 
           <div class="d-flex flex-row justify-content-center" ng-if="selectedImage">
             <button class="btn btn-primary mx-2 mx-lg-5" ng-click="$ctrl.closeImageUploadModal()">
               CANCEL
             </button>
-            <p>{{croppedImage}}</p>
+            <p>{{$ctrl.croppedImage}}</p>
             <button
               class="btn btn-success mx-2 mx-lg-5"
               ng-click="$ctrl.uploadUserImage(croppedImage)">
