@@ -394,7 +394,7 @@ img-crop canvas {
 
 .jd-user-card-image-row {
   transform: translate(0%, 0%);
-  height: 80px;
+  height: 30px;
   background-color: rgb(0, 0, 0, 0);
 }
 
