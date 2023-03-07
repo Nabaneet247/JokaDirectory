@@ -361,6 +361,7 @@
 
 .jd-user-image-crop-area {
   background-color: rgb(101, 101, 101);
+  overflow: hidden;
   height: 400px;
   width: 600px;
 }
