@@ -49,23 +49,19 @@
                 result-image="$ctrl.croppedImage"
                 ng-init="$ctrl.croppedImage=''">
               </img-crop>
-              <p>{{$ctrl.croppedImage}}</p>
               <div>
                 <img ng-src="{{$ctrl.croppedImage}}" />
+              </div>
             </div>
-            </div>
-            <p>{{$ctrl.croppedImage}}</p>
           </div>
-          <p>{{$ctrl.croppedImage}}</p>
 
           <div class="d-flex flex-row justify-content-center" ng-if="selectedImage">
             <button class="btn btn-primary mx-2 mx-lg-5" ng-click="$ctrl.closeImageUploadModal()">
               CANCEL
             </button>
-            <p>{{$ctrl.croppedImage}}</p>
             <button
               class="btn btn-success mx-2 mx-lg-5"
-              ng-click="$ctrl.uploadUserImage(croppedImage)">
+              ng-click="$ctrl.uploadUserImage()">
               SAVE
             </button>
           </div>

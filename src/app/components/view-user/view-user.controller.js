@@ -87,9 +87,8 @@ export default class ViewUserController {
     this.uploadImageModalActive = false;
   }
 
-  uploadUserImage(imageData) {
-    console.log(imageData);
-    console.log(this.$scope.selectedImage);
+  uploadUserImage() {
+    console.log(this.croppedImage);
     // this.closeImageUploadModal();
   }
 }
