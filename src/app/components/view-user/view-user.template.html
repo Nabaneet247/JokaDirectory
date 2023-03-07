@@ -34,25 +34,27 @@
             class="fas fa-times fa-lg p-2 mt-3 jd-modal-close-icon align-self-end"
             ng-click="$ctrl.closeImageUploadModal()"></i>
           <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-
             <button ngf-select class="btn btn-light mb-4" ng-model="selectedImage" accept="image/*">
               Select Picture
             </button>
 
             <div
+              ng-if="croppedImage"
               ngf-drop
               ng-model="selectedImage"
               ngf-pattern="image/*"
               class="jd-user-image-crop-area">
-              <img-crop image="selectedImage | ngfDataUrl" result-image="croppedImage" ng-init="croppedImage=''">
+              <img-crop
+                image="selectedImage | ngfDataUrl"
+                result-image="croppedImage"
+                ng-init="croppedImage=''">
               </img-crop>
             </div>
-
           </div>
 
-          <div class="d-flex flex-row justify-content-center">
+          <div class="d-flex flex-row justify-content-center" ng-if="croppedImage">
             <button class="btn btn-primary mx-2 mx-lg-5" ng-click="$ctrl.closeImageUploadModal()">
-              BACK
+              CANCEL
             </button>
             <button class="btn btn-success mx-2 mx-lg-5" ng-click="$ctrl.uploadUserImage()">
               SAVE
