@@ -89,6 +89,7 @@ export default class ViewUserController {
 
   uploadUserImage(imageData) {
     console.log(imageData);
+    console.log(this.$scope.selectedImage);
     // this.closeImageUploadModal();
   }
 }

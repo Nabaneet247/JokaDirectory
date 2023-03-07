@@ -45,7 +45,7 @@
               ngf-pattern="image/*"
               class="jd-user-image-crop-area">
               <img-crop
-                image="selectedImage"
+                image="selectedImage | ngfDataUrl"
                 result-image="croppedImage"
                 ng-init="croppedImage=''">
               </img-crop>
