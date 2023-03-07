@@ -30,6 +30,8 @@ export default class ViewUserController {
 
     this.editMode = false;
     this.uploadImageModalActive = false;
+    this.selectedImage = "";
+    this.croppedImage = "";
   }
 
   openEditMode() {
