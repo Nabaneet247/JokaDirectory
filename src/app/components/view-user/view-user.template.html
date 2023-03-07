@@ -41,7 +41,7 @@
                 ng-src="{{$ctrl.user.imageUrl}}"
                 ng-on-error="this.src = '{{$ctrl.defaultImageUrl}}'" />
 
-              <img-crop image="selectedImage" result-image="croppedImage"></img-crop>
+              <img-crop image="$ctrl.selectedImage" result-image="$ctrl.croppedImage"></img-crop>
 
               <img
                 class="jd-view-user-profile-image"
