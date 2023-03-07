@@ -37,7 +37,7 @@ export default class ViewUserController {
     this.croppedImage = "";
     this.$scope.$watch("$ctrl.croppedImage", function (newValue, oldValue, scope) {
       scope.$ctrl.croppedImageValid = scope.$ctrl.isCroppedImageOK();
-      this.errorInUploading = false;
+      scope.$ctrl.errorInUploading = false;
     });
   }
 
