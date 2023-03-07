@@ -34,8 +34,10 @@ export default class ViewUserController {
 
     this.$scope.$watch("$ctrl.croppedImage", function (newValue, oldValue, scope) {
       let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
+      console.log(blob.size)
       if (blob.size < 5000) {
         this.croppedImage = "";
+        console.log(this.croppedImage)
         return;
       }
     });
