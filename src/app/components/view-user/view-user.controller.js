@@ -92,6 +92,7 @@ export default class ViewUserController {
     let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
     let result = this.backendService.uploadUserImage(blob, this.user.cn);
     console.log(result);
+    this.user.imageUrl = this.croppedImage;
     this.closeImageUploadModal();
   }
 }
