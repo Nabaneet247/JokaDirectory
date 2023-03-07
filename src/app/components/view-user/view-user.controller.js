@@ -27,8 +27,6 @@ export default class ViewUserController {
       this.user.pager = `https://www.${linkedInUrl}`;
     }
 
-    this.defaultImageUrl = `${this.configData.userImagesPath}/default.jpg`;
-
     this.editMode = false;
     this.uploadImageModalActive = false;
     this.errorInUploading = false;
