@@ -46,14 +46,17 @@ export default class BackendService {
     }
   }
 
-  /* async logout() {
+  async uploadUserImage(blobData, user_id) {
     try {
-      let res = await this.$http.post(this.apiUrl + "/auth/logout", {});
+      let res = await this.$http.post(this.apiUrl + "/jd/saveUserImage", {
+        file: blobData,
+        cn: user_id,
+      });
+      console.log(res);
       return true;
     } catch (err) {
-      console.error("Couldn't logout");
       console.error(err);
       return false;
     }
-  } */
+  }
 }
