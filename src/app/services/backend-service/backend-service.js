@@ -52,7 +52,11 @@ export default class BackendService {
       let form_data = new FormData();
       form_data.append("cn", user_id);
       form_data.append("file", blobData);
-      let res = await this.$http.post(this.apiUrl + "/jd/saveUserImage", form_data);
+      let res = await this.$http({
+        method: 'POST',
+        url: this.apiUrl + "/jd/saveUserImage",
+        data: form_data,
+        headers: { 'Content-Type': undefined},});
       console.log(res);
       return true;
     } catch (err) {
