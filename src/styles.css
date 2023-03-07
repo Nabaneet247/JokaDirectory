@@ -165,8 +165,18 @@
   }
 }
 
-.jd-search-result-box {
-  background-color: aliceblue;
+.jd-search-result-card-container {
+  padding-top: 80px;
+}
+
+@media (min-width: 799px) {
+  .jd-search-result-card-container {
+    padding-top: 70px;
+  }
+}
+
+.jd-search-result-card {
+  background-color: white;
 }
 
 .jd-search-group-tab-inactive {
@@ -243,7 +253,7 @@
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 92vh;
+  height: 90vh;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
@@ -255,7 +265,7 @@
   .jd-view-user-modal {
     padding-left: 4rem;
     padding-right: 4rem;
-    padding-top: 8rem;
+    padding-top: 4rem;
     padding-bottom: 4rem;
   }
 }
@@ -300,4 +310,133 @@
   color: rgb(30, 30, 30);
   font-weight: bold;
   font-size: 1.1rem;
+}
+
+.jd-view-user-header-text {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.jd-view-user-profile-image-container {
+  background-image: url("assets/defaultProfilePic.jpg");
+  background-size: contain;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin-bottom: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+@media (min-width: 799px) {
+  .jd-view-user-profile-image-container {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+.jd-view-user-profile-image {
+  object-fit: cover;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+}
+
+@media (min-width: 799px) {
+  .jd-view-user-profile-image {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+.jd-view-user-profile-image-edit-button {
+  border-radius: 50%;
+  transform: translate(320%, -150%);
+  background-color: rgb(100, 100, 100, 0.75);
+  width: 35px;
+  height: 35px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  cursor: pointer;
+}
+
+@media (min-width: 799px) {
+  .jd-view-user-profile-image-edit-button {
+    transform: translate(400%, -170%);
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.jd-edit-user-image-modal {
+  background-color: rgba(50, 50, 50, 0.98);
+  border-radius: 0.75rem;
+  position: fixed;
+  z-index: 2100;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 90vh;
+  padding: 1rem;
+  color: white;
+}
+
+.jd-user-image-crop-area {
+  background-color: rgb(0, 0, 0, 0);
+  overflow: hidden;
+  height: 300px;
+  width: 300px;
+}
+
+@media (min-width: 799px) {
+  .jd-user-image-crop-area {
+    height: 600px;
+    width: 600px;
+  }
+}
+
+/* line 1, ../../source/scss/ng-img-crop.scss */
+img-crop {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+/* line 7, ../../source/scss/ng-img-crop.scss */
+img-crop canvas {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  /* mobile webkit */
+}
+
+.jd-user-card-image-row {
+  transform: translate(0%, -250%);
+  height: 30px;
+  background-color: rgb(0, 0, 0, 0);
+}
+
+.jd-user-card-image {
+  background-image: url("assets/defaultProfilePic.jpg");
+  background-size: contain;
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+.jd-user-card-image > img {
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
 }

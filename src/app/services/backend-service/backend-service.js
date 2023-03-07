@@ -46,14 +46,21 @@ export default class BackendService {
     }
   }
 
-  /* async logout() {
+  async uploadUserImage(blobData, user_id) {
     try {
-      let res = await this.$http.post(this.apiUrl + "/auth/logout", {});
-      return true;
+      let form_data = new FormData();
+      form_data.append("cn", user_id);
+      form_data.append("IMAGE", blobData);
+      let res = await this.$http({
+        method: "POST",
+        url: this.apiUrl + "/jd/saveUserImage",
+        data: form_data,
+        headers: { "Content-Type": undefined },
+      });
+      return (res.status == 200);
     } catch (err) {
-      console.error("Couldn't logout");
       console.error(err);
       return false;
     }
-  } */
+  }
 }

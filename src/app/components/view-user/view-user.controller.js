@@ -1,11 +1,14 @@
 export default class ViewUserController {
-  constructor(constants, backendService, $scope) {
+  constructor(constants, backendService, $scope, configData, Upload) {
     this.labelMappings = constants["Label Mappings"];
     this.backendService = backendService;
     this.$scope = $scope;
+    this.configData = configData;
+    this.Upload = Upload;
   }
 
   $onInit() {
+    // this.user is passed from user-card component
     if (!this.user) {
       this.user = { displayName: "This user doesn't exist" };
     }
@@ -19,14 +22,21 @@ export default class ViewUserController {
 
     // modifying LinkedIn URL
     if (this.user.pager) {
-      console.log(this.user.displayName, typeof this.user.pager);
       let indexOfLinkedUrl = this.user.pager.indexOf("linkedin.com");
       let linkedInUrl = this.user.pager.substring(indexOfLinkedUrl);
       this.user.pager = `https://www.${linkedInUrl}`;
-      console.log(this.user.pager);
     }
 
     this.editMode = false;
+    this.uploadImageModalActive = false;
+    this.errorInUploading = false;
+
+    this.croppedImageValid = false;
+    this.croppedImage = "";
+    this.$scope.$watch("$ctrl.croppedImage", function (newValue, oldValue, scope) {
+      scope.$ctrl.croppedImageValid = scope.$ctrl.isCroppedImageOK();
+      scope.$ctrl.errorInUploading = false;
+    });
   }
 
   openEditMode() {
@@ -72,6 +82,37 @@ export default class ViewUserController {
   }
 
   closeWindow() {
+    this.closeImageUploadModal();
     this.modalActiveFlag = false;
+  }
+
+  openImageUploadModal() {
+    this.uploadImageModalActive = true;
+  }
+
+  closeImageUploadModal() {
+    this.uploadImageModalActive = false;
+  }
+
+  isCroppedImageOK() {
+    if (!this.croppedImage) return false;
+    let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
+    return blob.size >= 9000 && blob.size <= 500000; //ng-img-crop returns a cropped image of res 300x300, search by 300],f=
+  }
+
+  async uploadUserImage() {
+    if (!this.isCroppedImageOK) return;
+
+    let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
+    let result = await this.backendService.uploadUserImage(blob, this.user.cn);
+    if (!result) {
+      this.croppedImage = '';
+      this.croppedImageValid = false;
+      this.errorInUploading = true;
+      return;
+    }
+    this.user.imageUrl = this.croppedImage;
+    this.closeImageUploadModal();
+    this.$scope.$apply();
   }
 }

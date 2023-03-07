@@ -1,10 +1,10 @@
 export default class SearchResultsController {
   constructor($scope) {
     this.$scope = $scope;
-    // this.searchResults, this.searchType, this.searchRequestFired is inhertited from search component
   }
 
   $onInit() {
+    // this.searchResults, this.searchType, this.searchRequestFired is inhertited from search component
     this.sortProperty = "batch";
     // this.sortProperty = "displayName";
     this.sortReverse = true;
