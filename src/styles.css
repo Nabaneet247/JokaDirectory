@@ -347,7 +347,7 @@
 }
 
 .jd-edit-user-image-modal {
-  background-color: rgba(50, 50, 50, 0.97);
+  background-color: rgba(50, 50, 50, 0.98);
   border-radius: 0.75rem;
   position: fixed;
   z-index: 2100;
@@ -357,4 +357,8 @@
   height: 101%;
   padding: 1rem;
   color: white;
+}
+
+.jd-user-image-crop-area {
+  background-color: antiquewhite;
 }
