@@ -34,20 +34,31 @@
             class="fas fa-times fa-lg p-2 mt-3 jd-modal-close-icon align-self-end"
             ng-click="$ctrl.closeImageUploadModal()"></i>
           <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-            <input type="file" class="form-control mb-4" id="userImageInput" />
+            <input type="file" class="form-control mb-4" ng-change="$ctrl.userImageSelected()" />
             <div class="jd-user-image-crop-area">
-            <img
-              class="jd-view-user-profile-image"
-              ng-src="{{$ctrl.user.imageUrl}}"
-              ng-on-error="this.src = '{{$ctrl.defaultImageUrl}}'" />
+              <img
+                class="jd-view-user-profile-image"
+                ng-src="{{$ctrl.user.imageUrl}}"
+                ng-on-error="this.src = '{{$ctrl.defaultImageUrl}}'" />
+
+              <img-crop image="selectedImage" result-image="croppedImage"></img-crop>
+
+              <img
+                class="jd-view-user-profile-image"
+                ng-src="{{$ctrl.croppedImage}}"
+                ng-on-error="this.src = '{{$ctrl.defaultImageUrl}}'" />
+
             </div>
           </div>
           <div class="d-flex flex-row justify-content-center">
-            <button class="btn btn-primary mx-2 mx-lg-5" ng-click="$ctrl.closeImageUploadModal()">BACK</button>
-            <button class="btn btn-success mx-2 mx-lg-5" ng-click="$ctrl.uploadUserImage()">SAVE</button>
+            <button class="btn btn-primary mx-2 mx-lg-5" ng-click="$ctrl.closeImageUploadModal()">
+              BACK
+            </button>
+            <button class="btn btn-success mx-2 mx-lg-5" ng-click="$ctrl.uploadUserImage()">
+              SAVE
+            </button>
           </div>
         </div>
-
       </div>
 
       <h2 class="jd-view-user-header-text">
