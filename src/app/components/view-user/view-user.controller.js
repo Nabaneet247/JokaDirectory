@@ -92,6 +92,9 @@ export default class ViewUserController {
     console.log(this.croppedImage);
     console.log(typeof this.croppedImage);
     console.log(this.Upload.dataUrltoBlob(this.croppedImage, "hello"))
+    let blob = this.Upload.dataUrltoBlob(this.croppedImage);
+    let url = window.URL.createObjectURL(blob);
+    this.downloadLink = url;
     // this.closeImageUploadModal();
   }
 }
