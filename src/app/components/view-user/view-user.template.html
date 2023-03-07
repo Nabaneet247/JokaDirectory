@@ -44,7 +44,8 @@
               ngf-pattern="image/jpg,image/png"
               class="jd-user-image-crop-area">
               <p ng-if="!$ctrl.croppedImageValid" style="text-align: center">
-                <span>Please select an image(JPG/PNG) having size between 10-500 KB</span>
+                <span ng-hide="$ctrl.errorInUploading">Please select an image(JPG/PNG) having size between 10-500 KB</span>
+                <span ng-show="$ctrl.errorInUploading">There was as error while uploading the image. Please try again later or contact ISG</span>
               </p>
               <img-crop
                 image="selectedImage | ngfDataUrl"

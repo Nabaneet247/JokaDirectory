@@ -31,11 +31,13 @@ export default class ViewUserController {
 
     this.editMode = false;
     this.uploadImageModalActive = false;
+    this.errorInUploading = false;
 
     this.croppedImageValid = false;
     this.croppedImage = "";
     this.$scope.$watch("$ctrl.croppedImage", function (newValue, oldValue, scope) {
       scope.$ctrl.croppedImageValid = scope.$ctrl.isCroppedImageOK();
+      this.errorInUploading = false;
     });
   }
 
@@ -105,7 +107,12 @@ export default class ViewUserController {
 
     let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
     let result = await this.backendService.uploadUserImage(blob, this.user.cn);
-    console.log(result);
+    if (!result) {
+      this.croppedImage = '';
+      this.croppedImageValid = false;
+      this.errorInUploading = true;
+      return;
+    }
     this.user.imageUrl = this.croppedImage;
     this.closeImageUploadModal();
     this.$scope.$apply();
