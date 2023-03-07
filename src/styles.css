@@ -410,6 +410,7 @@ img-crop canvas {
 
 .jd-user-card-image-row > img {
   object-fit: cover;
+  cursor: pointer;
   border-radius: 50%;
   height: 120px;
   width: 120px;
