@@ -75,6 +75,7 @@ export default class ViewUserController {
   }
 
   closeWindow() {
+    this.closeImageUploadModal();
     this.modalActiveFlag = false;
   }
 
