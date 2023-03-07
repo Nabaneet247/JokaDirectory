@@ -49,10 +49,10 @@ export default class BackendService {
   async uploadUserImage(blobData, user_id) {
     try {
       console.log(blobData);
-      let res = await this.$http.post(this.apiUrl + "/jd/saveUserImage", {
-        file: blobData,
-        cn: user_id,
-      });
+      let form_data = new FormData();
+      form_data.append("cn", user_id);
+      form_data.append("file", blobData);
+      let res = await this.$http.post(this.apiUrl + "/jd/saveUserImage", form_data);
       console.log(res);
       return true;
     } catch (err) {
