@@ -107,7 +107,7 @@ export default class ViewUserController {
     let result = await this.backendService.uploadUserImage(blob, this.user.cn);
     console.log(result);
     this.user.imageUrl = this.croppedImage;
-    this.$scope.$apply();
     this.closeImageUploadModal();
+    this.$scope.$apply();
   }
 }
