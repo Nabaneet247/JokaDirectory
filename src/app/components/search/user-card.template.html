@@ -1,6 +1,6 @@
 <div class="" ng-if="$ctrl.user.displayName">
   <div class="jd-user-card-image-row d-flex flex-row justify-content-center">
-      <img ng-src="{{$ctrl.user.imageUrl}}" ng-click="$ctrl.openModal()" loading="lazy" ng-on-error="this.src = '{{$ctrl.defaultImageUrl}}'"/>
+      <img src="{{$ctrl.user.imageUrl}}" ng-click="$ctrl.openModal()" loading="lazy" onerror="this.src = '{{$ctrl.defaultImageUrl}}'"/>
   </div>
   <div class="card-body">
     <a href="" ng-click="$ctrl.openModal()"
