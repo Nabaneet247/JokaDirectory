@@ -1,9 +1,10 @@
 export default class ViewUserController {
-  constructor(constants, backendService, $scope, configData) {
+  constructor(constants, backendService, $scope, configData, Upload) {
     this.labelMappings = constants["Label Mappings"];
     this.backendService = backendService;
     this.$scope = $scope;
     this.configData = configData;
+    this.Upload = Upload;
   }
 
   $onInit() {
@@ -89,6 +90,8 @@ export default class ViewUserController {
 
   uploadUserImage() {
     console.log(this.croppedImage);
+    console.log(typeof this.croppedImage);
+    console.log(this.Upload.dataUrltoBlob(this.croppedImage, "hello"))
     // this.closeImageUploadModal();
   }
 }
