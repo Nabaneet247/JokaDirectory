@@ -51,16 +51,18 @@
               </img-crop>
               <p>{{croppedImage}}</p>
             </div>
-
-            <div>
+            <p>{{croppedImage}}</p>
+            <!-- <div>
               <img ng-src="{{croppedImage}}" />
-            </div>
+            </div> -->
           </div>
+          <p>{{croppedImage}}</p>
 
           <div class="d-flex flex-row justify-content-center" ng-if="selectedImage">
             <button class="btn btn-primary mx-2 mx-lg-5" ng-click="$ctrl.closeImageUploadModal()">
               CANCEL
             </button>
+            <p>{{croppedImage}}</p>
             <button
               class="btn btn-success mx-2 mx-lg-5"
               ng-click="$ctrl.uploadUserImage(croppedImage)">
