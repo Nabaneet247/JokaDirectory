@@ -361,8 +361,6 @@
 
 .jd-user-image-crop-area {
   background-color: rgb(101, 101, 101);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  height: 90%;
-  width: 90%;
+  height: 400px;
+  width: 600px;
 }
