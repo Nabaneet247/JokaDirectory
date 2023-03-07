@@ -43,6 +43,7 @@
               ng-model="selectedImage"
               ngf-pattern="image/jpg,image/png"
               class="jd-user-image-crop-area">
+              <p>Not Valid</p>
               <img-crop
                 image="selectedImage | ngfDataUrl"
                 result-image="$ctrl.croppedImage"

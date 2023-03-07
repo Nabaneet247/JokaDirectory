@@ -32,7 +32,7 @@ export default class ViewUserController {
     this.editMode = false;
     this.uploadImageModalActive = false;
 
-    this.croppedImageValid = false;
+    this.croppedImageValid = undefined;
     this.$scope.$watch("$ctrl.croppedImage", function (newValue, oldValue, scope) {
       scope.$ctrl.croppedImageValid = scope.$ctrl.isCroppedImageOK();
       console.log(scope.$ctrl.croppedImageValid);
