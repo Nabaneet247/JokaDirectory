@@ -367,7 +367,7 @@
 }
 
 @media (min-width: 799px) {
-  jd-user-image-crop-area {
+  .jd-user-image-crop-area {
     height: 600px;
     width: 600px;
   }
