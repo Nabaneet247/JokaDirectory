@@ -39,7 +39,7 @@
             </button>
 
             <div
-              ng-if="croppedImage"
+              ng-if="selectedImage"
               ngf-drop
               ng-model="selectedImage"
               ngf-pattern="image/*"
@@ -52,7 +52,7 @@
             </div>
           </div>
 
-          <div class="d-flex flex-row justify-content-center" ng-if="croppedImage">
+          <div class="d-flex flex-row justify-content-center" ng-if="selectedImage">
             <button class="btn btn-primary mx-2 mx-lg-5" ng-click="$ctrl.closeImageUploadModal()">
               CANCEL
             </button>
