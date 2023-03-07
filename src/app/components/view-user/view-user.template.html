@@ -34,7 +34,7 @@
             class="fas fa-times fa-lg p-2 mt-3 jd-modal-close-icon align-self-end"
             ng-click="$ctrl.closeImageUploadModal()"></i>
           <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-            <button ngf-select class="btn btn-light mb-4" ng-model="$ctrl.selectedImage" accept="image/*">Select Picture</button>
+            <button ngf-select class="btn btn-light mb-4" ng-model="selectedImage" accept="image/*">Select Picture</button>
             <div class="jd-user-image-crop-area">
               <!-- <img
                 class="jd-view-user-profile-image"
@@ -42,11 +42,11 @@
                 ng-on-error="this.src = '{{$ctrl.defaultImageUrl}}'" />
               
  -->
-              <div ngf-drop ng-model="$ctrl.selectedImage" ngf-pattern="image/*" class="jd-user-image-crop-area">
+              <div ngf-drop ng-model="selectedImage" ngf-pattern="image/*" class="jd-user-image-crop-area">
                 <img-crop
-                  image="$ctrl.selectedImage"
-                  result-image="$ctrl.croppedImage"
-                  ng-init="$ctrl.croppedImage=''">
+                  image="selectedImage"
+                  result-image="croppedImage"
+                  ng-init="croppedImage=''">
                 </img-crop>
               </div>
 

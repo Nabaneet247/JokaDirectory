@@ -4,8 +4,6 @@ export default class ViewUserController {
     this.backendService = backendService;
     this.$scope = $scope;
     this.configData = configData;
-    this.selectedImage = "";
-    this.croppedImage = "";
   }
 
   $onInit() {
@@ -104,6 +102,6 @@ export default class ViewUserController {
 
   uploadUserImage() {
     this.closeImageUploadModal();
-    console.log(this.croppedImage);
+    console.log(this.$scope.croppedImage);
   }
 }
