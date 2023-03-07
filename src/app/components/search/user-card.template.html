@@ -1,9 +1,9 @@
 <div class="" ng-if="$ctrl.user.displayName">
   <div class="card-body">
     <a href="" ng-click="$ctrl.openModal()"
-      ><h4 class="card-title">{{$ctrl.user.displayName}}</h4></a
+      ><h4 class="card-title text-center">{{$ctrl.user.displayName}}</h4></a
     >
-    <h6 class="card-subtitle mb-2 text-muted" ng-if="$ctrl.user.regno">
+    <h6 class="card-subtitle mb-3 text-muted text-center" ng-if="$ctrl.user.regno">
       Reg No: {{$ctrl.user.regno}}
     </h6>
     <div class="card-text mb-1" ng-if="$ctrl.extraSearchTypePresent">
