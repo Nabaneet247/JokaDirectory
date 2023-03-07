@@ -410,6 +410,7 @@ img-crop canvas {
 
 .jd-user-card-image {
   background-image: url("assets/defaultProfilePic.jpg");
+  background-size: contain;
   border-radius: 50%;
   height: 120px;
   width: 120px;
