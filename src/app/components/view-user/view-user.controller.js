@@ -36,7 +36,6 @@ export default class ViewUserController {
     this.croppedImage = "";
     this.$scope.$watch("$ctrl.croppedImage", function (newValue, oldValue, scope) {
       scope.$ctrl.croppedImageValid = scope.$ctrl.isCroppedImageOK();
-      console.log(scope.$ctrl.croppedImageValid);
     });
   }
 
@@ -96,13 +95,14 @@ export default class ViewUserController {
   }
 
   isCroppedImageOK() {
-    if (!this.croppedImage) return 0;
+    if (!this.croppedImage) return false;
     let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
     return blob.size >= 9000 && blob.size <= 500000; //ng-img-crop returns a cropped image of res 300x300, search by 300],f=
   }
 
   async uploadUserImage() {
     if (!this.isCroppedImageOK) return;
+    
     let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
     let result = await this.backendService.uploadUserImage(blob, this.user.cn);
     console.log(result);
