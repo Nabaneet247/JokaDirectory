@@ -86,4 +86,8 @@ export default class ViewUserController {
   closeImageUploadModal() {
     this.uploadImageModalActive = false;
   }
+
+  uploadUserImage() {
+    this.closeImageUploadModal();
+  }
 }
