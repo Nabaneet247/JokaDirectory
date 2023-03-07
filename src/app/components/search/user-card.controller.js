@@ -10,7 +10,7 @@ export default class UserCardController {
     this.isViewUserModalActive = false;
     const displayedFields = ["displayName","regno","departmentNumber","batch","hostel","mail","mobile"];
     this.extraSearchTypePresent = !displayedFields.includes(this.searchType.key);
-    this.user.imageUrl = `${this.configData.userImagesPath}/${this.user.cn}.jpg`;
+    this.user.imageUrl = `${this.configData.userImagesPath}/${this.user.cn}.jpg?${Date.now()}`;
     this.defaultImageUrl = `${this.configData.userImagesPath}/default.jpg`;
   }
 
