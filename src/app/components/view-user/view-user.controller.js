@@ -31,6 +31,14 @@ export default class ViewUserController {
 
     this.editMode = false;
     this.uploadImageModalActive = false;
+
+    this.$scope.$watch("$ctrl.croppedImage", function (newValue, oldValue, scope) {
+      let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
+      if (blob.size < 5000) {
+        this.croppedImage = "";
+        return;
+      }
+    });
   }
 
   openEditMode() {
@@ -92,7 +100,7 @@ export default class ViewUserController {
     let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
     console.log(blob);
     if (blob.size < 5000) {
-      this.croppedImage = '';
+      this.croppedImage = "";
       return;
     }
     let result = this.backendService.uploadUserImage(blob, this.user.cn);
