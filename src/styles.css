@@ -166,7 +166,13 @@
 }
 
 .jd-search-result-card-container {
-  padding-top: 60px;
+  padding-top: 80px;
+}
+
+@media (min-width: 799px) {
+  .jd-search-result-card-container {
+    padding-top: 70px;
+  }
 }
 
 .jd-search-result-card {
@@ -397,7 +403,7 @@ img-crop canvas {
 }
 
 .jd-user-card-image-row {
-  transform: translate(0%, -200%);
+  transform: translate(0%, -250%);
   height: 30px;
   background-color: rgb(0, 0, 0, 0);
 }
