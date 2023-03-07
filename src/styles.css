@@ -408,7 +408,7 @@ img-crop canvas {
   background-color: rgb(0, 0, 0, 0);
 }
 
-.jd-user-card-image-row > img {
+.jd-user-card-image {
   object-fit: cover;
   cursor: pointer;
   border-radius: 50%;
