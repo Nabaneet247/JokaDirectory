@@ -102,11 +102,12 @@ export default class ViewUserController {
 
   async uploadUserImage() {
     if (!this.isCroppedImageOK) return;
-    
+
     let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
     let result = await this.backendService.uploadUserImage(blob, this.user.cn);
     console.log(result);
     this.user.imageUrl = this.croppedImage;
+    this.$scope.$apply();
     this.closeImageUploadModal();
   }
 }
