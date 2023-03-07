@@ -35,8 +35,8 @@ export default class ViewUserController {
     this.croppedImageValid = false;
     this.$scope.$watch("$ctrl.croppedImage", function (newValue, oldValue, scope) {
       let size = scope.$ctrl.getCroppedImageSize();
-      this.croppedImageValid = size >= 5000 ? true : false;
-      console.log(this.croppedImageValid);
+      scope.$ctrl.croppedImageValid = size >= 5000;
+      console.log(scope.$ctrl.croppedImageValid);
     });
   }
 
