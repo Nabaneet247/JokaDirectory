@@ -98,7 +98,7 @@ export default class ViewUserController {
   isCroppedImageOK() {
     if (!this.croppedImage) return 0;
     let blob = this.Upload.dataUrltoBlob(this.croppedImage, this.user.cn);
-    return blob.size >= 9000;
+    return blob.size >= 9000 && blob.size <= 500000; //ng-img-crop returns a cropped image of res 300x300, search by 300],f=
   }
 
   uploadUserImage() {
